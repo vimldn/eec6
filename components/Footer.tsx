@@ -12,8 +12,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-brand to-brand-light rounded-md flex items-center justify-center font-bold text-dark">
-                E
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img 
+                  src="/favicon.png" 
+                  alt="Extra Edge Club" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-bold">Extra Edge Club Ltd</span>
             </Link>
