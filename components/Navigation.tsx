@@ -14,8 +14,12 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-gradient-to-br from-brand to-brand-light rounded-lg flex items-center justify-center font-bold text-lg text-dark">
-              E
+            <div className="w-9 h-9 flex items-center justify-center">
+              <img 
+                src="/favicon.png" 
+                alt="Extra Edge Club" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <div className="text-lg font-bold tracking-tight leading-tight">
