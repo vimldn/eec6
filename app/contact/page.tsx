@@ -1,11 +1,39 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Free SEO Audit',
-  description: 'Get in touch with Extra Edge Club for a free SEO audit. We help UK businesses grow through Local SEO and national SEO campaigns.',
-};
+import { useState } from 'react';
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzhMiatnj_tIyzTGmmEY1GZV6eEnoqbQJGJRsTDOAU84w1XxDeIQFwi2VshXJgSH04/exec";
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('loading');
+
+    const form = e.currentTarget;
+    const data = {
+      fullName: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      location: "",
+      page: "Contact Page",
+      source: document.referrer || "Direct",
+    };
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setStatus('success');
+      form.reset();
+    } catch {
+      setStatus('error');
+    }
+  }
+
   return (
     <>
       {/* Hero */}
@@ -27,7 +55,7 @@ export default function ContactPage() {
           {/* Form */}
           <div className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-6">Get Your Free SEO Audit</h2>
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Name *</label>
@@ -104,10 +132,18 @@ export default function ContactPage() {
               
               <button 
                 type="submit"
-                className="w-full bg-brand hover:bg-brand-dark text-white py-4 rounded-lg font-semibold transition-colors"
+                disabled={status === 'loading'}
+                className="w-full bg-brand hover:bg-brand-dark text-white py-4 rounded-lg font-semibold transition-colors disabled:opacity-60"
               >
-                Request Free Audit
+                {status === 'loading' ? 'Sending...' : 'Request Free Audit'}
               </button>
+
+              {status === 'success' && (
+                <p className="text-green-400 text-sm text-center">✓ Thanks! We'll be in touch within 24 hours.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-sm text-center">Something went wrong. Please try again.</p>
+              )}
               
               <p className="text-xs text-text-secondary text-center">
                 We'll respond within 24 hours. No spam, ever.
