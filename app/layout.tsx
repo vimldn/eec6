@@ -7,13 +7,19 @@ import Schema from '@/components/Schema';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://extraedgeclub.com'),
+  applicationName: 'Extra Edge Club',
   title: {
     default: 'Extra Edge Club | SEO Agency UK | Since 2011',
-    template: '%s | Extra Edge Club'
+    template: '%s | Extra Edge Club',
   },
-  description: 'UK SEO specialists since 2011. We help businesses grow through Local SEO and comprehensive SEO services. Trusted by Sixes Cricket, The Gentleman\'s Journal, and more.',
+  description:
+    "UK SEO specialists since 2011. We help businesses grow through Local SEO and comprehensive SEO services. Trusted by Sixes Cricket, The Gentleman's Journal, and more.",
   keywords: ['SEO agency UK', 'local SEO', 'digital marketing', 'search engine optimisation'],
   authors: [{ name: 'Extra Edge Club Ltd' }],
+  alternates: {
+    canonical: 'https://extraedgeclub.com',
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -22,16 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
+    url: 'https://extraedgeclub.com',
     siteName: 'Extra Edge Club',
     images: ['/logo.png'],
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
