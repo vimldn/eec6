@@ -123,7 +123,7 @@ export default function LocalSeoLocationPage({
         </div>
       </div>
 
-        </div>
+     
       {/* HERO */}
       <section className="relative overflow-hidden">
         {/* Background image that ALWAYS exists (you control HERO_IMAGE) */}
