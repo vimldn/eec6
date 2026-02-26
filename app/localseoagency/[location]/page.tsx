@@ -126,15 +126,15 @@ export default function LocalSeoLocationPage({
         </div>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        {/* Background */}
+        {/* Background image that ALWAYS exists (you control HERO_IMAGE) */}
         <div className="absolute inset-0">
           <img
-            src={location.image}
-            alt={`Local SEO Agency ${location.name}`}
-            className="w-full h-full object-cover"
+            src={HERO_IMAGE}
+            alt="Local SEO hero background"
+            className="h-full w-full object-cover object-center"
           />
 
-          {/* Darkness control: edit these 3 numbers */}
+          {/* Darkness control: edit these values */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/90 to-black/90" />
         </div>
 
