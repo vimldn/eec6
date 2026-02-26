@@ -69,7 +69,7 @@ export default function SeoLocationPage({ params }: PageProps) {
             className="h-full w-full object-cover object-center"
           />
           {/* Keep hero visible but readable */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
         </div>
 
         <div className="relative z-10 px-6 py-16 lg:py-20">
