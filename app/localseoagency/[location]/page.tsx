@@ -65,7 +65,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
             className="w-full h-full object-cover object-center"
           />
           {/* Darkness control: edit these values */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/55 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/90 to-black/90" />
         </div>
 
         {/* Content */}
