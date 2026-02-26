@@ -5,8 +5,8 @@ import { useState } from 'react';
 type LeadFormProps = {
   page: string;
   location?: string;
-  title?: string;       // card heading (same place as "Get Your Free SEO Audit")
-  buttonText?: string;  // button label
+  title?: string;
+  buttonText?: string;
 };
 
 const SCRIPT_URL =
@@ -28,7 +28,6 @@ export default function LeadForm({
 
     const form = e.currentTarget;
 
-    // IDENTICAL behavior to /contact/: only sends these fields
     const data = {
       fullName: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
@@ -53,13 +52,21 @@ export default function LeadForm({
   }
 
   return (
-    <div className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
-      <h2 className="text-2xl font-bold mb-6">{title}</h2>
+    // ✅ Grey shadow/glow goes HERE (outer wrapper)
+    <div
+      className="
+        rounded-2xl p-8
+        bg-[#141824]/95 backdrop-blur-md
+        border border-white/15
+        shadow-[0_30px_90px_rgba(0,0,0,0.65),0_0_0_1px_rgba(255,255,255,0.06),0_0_55px_rgba(255,255,255,0.14)]
+      "
+    >
+      <h2 className="text-2xl font-bold mb-6 text-white">{title}</h2>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2">
+            <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
               Name *
             </label>
             <input
@@ -67,13 +74,13 @@ export default function LeadForm({
               id="name"
               name="name"
               required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
+            <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
               Email *
             </label>
             <input
@@ -81,7 +88,7 @@ export default function LeadForm({
               id="email"
               name="email"
               required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="your@email.com"
             />
           </div>
@@ -89,20 +96,20 @@ export default function LeadForm({
 
         <div className="grid md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white">
               Phone
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="Your phone number"
             />
           </div>
 
           <div>
-            <label htmlFor="website" className="block text-sm font-medium mb-2">
+            <label htmlFor="website" className="block text-sm font-medium mb-2 text-white">
               Website *
             </label>
             <input
@@ -110,20 +117,20 @@ export default function LeadForm({
               id="website"
               name="website"
               required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="https://yourwebsite.com"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="service" className="block text-sm font-medium mb-2">
+          <label htmlFor="service" className="block text-sm font-medium mb-2 text-white">
             Service Interested In
           </label>
           <select
             id="service"
             name="service"
-            className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+            className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
           >
             <option value="">Select a service</option>
             <option value="local-seo">Local SEO</option>
@@ -133,14 +140,14 @@ export default function LeadForm({
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2">
+          <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
             Tell us about your goals
           </label>
           <textarea
             id="message"
             name="message"
             rows={4}
-            className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors resize-none"
+            className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors resize-none"
             placeholder="What are you looking to achieve with SEO?"
           />
         </div>
@@ -164,7 +171,7 @@ export default function LeadForm({
           </p>
         )}
 
-        <p className="text-xs text-text-secondary text-center">
+        <p className="text-xs text-white/45 text-center">
           We&apos;ll respond within 24 hours. No spam, ever.
         </p>
       </form>
