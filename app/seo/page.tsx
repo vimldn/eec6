@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import CTASection from '@/components/CTASection';
+import LeadForm from '@/components/LeadForm';
 import { locations } from '@/data/locations';
 
 export const metadata: Metadata = {
@@ -14,24 +15,27 @@ export default function SEOAgencyPage() {
       {/* Hero Section */}
       <section className="px-6 py-20 relative overflow-hidden">
         <div className="absolute -top-1/3 -right-1/4 w-[500px] h-[500px] bg-brand/10 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="max-w-4xl relative z-10">
-          <p className="section-label">SEO Agency</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            SEO Services Across <span className="text-brand">London</span>
-          </h1>
-          <p className="text-xl text-text-secondary max-w-2xl mb-8">
-            Full-scale organic search strategy to increase visibility, traffic, and conversions. We help London businesses outrank competitors and dominate search results.
-          </p>
-          <Link 
-            href="/contact/"
-            className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
-          >
-            Get Your Free SEO Audit
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+
+        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="section-label">SEO Agency</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+              SEO Services Across <span className="text-brand">London</span>
+            </h1>
+            <p className="text-xl text-text-secondary max-w-2xl mb-8">
+              Full-scale organic search strategy to increase visibility, traffic, and conversions. We help London businesses outrank competitors and dominate search results.
+            </p>
+            <Link
+              href="/contact/"
+              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
+            >
+              Get Your Free SEO Audit
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+          <LeadForm page="SEO Service Page" title="Get Your Free SEO Audit" buttonText="Request Free Audit" />
         </div>
       </section>
 
