@@ -1,177 +1,183 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
-const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxzhMiatnj_tIyzTGmmEY1GZV6eEnoqbQJGJRsTDOAU84w1XxDeIQFwi2VshXJgSH04/exec';
+type LeadFormProps = {
+  page: string;
+  location?: string;
+  title?: string;
+  buttonText?: string;
+};
 
-type Status = 'idle' | 'loading' | 'success' | 'error';
+const SCRIPT_URL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxzhMiatnj_tIyzTGmmEY1GZV6eEnoqbQJGJRsTDOAU84w1XxDeIQFwi2VshXJgSH04/exec'; // set this OR hardcode like your contact page
 
 export default function LeadForm({
   page,
   location,
-}: {
-  page: string;
-  location?: string;
-}) {
-  const [status, setStatus] = useState<Status>('idle');
+  title = 'Get a Free Consultation',
+  buttonText = 'Send Message',
+}: LeadFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const locationLabel = useMemo(() => (location ? location : ''), [location]);
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    website: '',
+    message: '',
+  });
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const sourceValue = useMemo(() => {
+    if (location) return `${page} - ${location}`;
+    return page;
+  }, [page, location]);
+
+  function onChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus('loading');
+    setStatus('idle');
 
-    const form = e.currentTarget;
+    if (!SCRIPT_URL) {
+      console.error(
+        'Missing SCRIPT_URL. Set NEXT_PUBLIC_CONTACT_SCRIPT_URL or hardcode the contact form endpoint.'
+      );
+      setStatus('error');
+      return;
+    }
 
-    const name = (form.elements.namedItem('name') as HTMLInputElement | null)?.value || '';
-    const email = (form.elements.namedItem('email') as HTMLInputElement | null)?.value || '';
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement | null)?.value || '';
-    const website = (form.elements.namedItem('website') as HTMLInputElement | null)?.value || '';
-    const service = (form.elements.namedItem('service') as HTMLSelectElement | null)?.value || '';
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement | null)?.value || '';
-
-    const data = {
-      fullName: name,
-      email,
-      phone,
-      website,
-      service,
-      message,
-      location: locationLabel,
-      page,
-      source: document.referrer || 'Direct',
-    };
+    setIsSubmitting(true);
 
     try {
-      await fetch(SCRIPT_URL, {
+      // Match typical contact-form payloads sent to Apps Script
+      const payload = new URLSearchParams();
+      payload.append('name', form.name);
+      payload.append('email', form.email);
+      payload.append('phone', form.phone);
+      payload.append('website', form.website);
+      payload.append('message', form.message);
+      payload.append('page', page);
+      payload.append('location', location ?? '');
+      payload.append('source', sourceValue);
+
+      const res = await fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: payload.toString(),
       });
 
+      if (!res.ok) throw new Error(`Bad response: ${res.status}`);
+
       setStatus('success');
-      form.reset();
-    } catch {
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        website: '',
+        message: '',
+      });
+    } catch (err) {
+      console.error(err);
       setStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
   return (
-    <div className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
-      <h2 className="text-2xl font-bold mb-6">Get Your Free SEO Audit</h2>
+    <div className="w-full rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+      <h3 className="mb-4 text-xl font-semibold">{title}</h3>
 
-      <form className="space-y-5" onSubmit={handleSubmit}>
-        <div className="grid md:grid-cols-2 gap-5">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2">
-              Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
-              placeholder="your@email.com"
-            />
-          </div>
-        </div>
+      <form onSubmit={onSubmit} className="space-y-3">
+        <input type="hidden" name="page" value={page} />
+        <input type="hidden" name="location" value={location ?? ''} />
+        <input type="hidden" name="source" value={sourceValue} />
 
-        <div className="grid md:grid-cols-2 gap-5">
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-2">
-              Phone
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
-              placeholder="Your phone number"
-            />
-          </div>
-          <div>
-            <label htmlFor="website" className="block text-sm font-medium mb-2">
-              Website *
-            </label>
-            <input
-              type="url"
-              id="website"
-              name="website"
-              required
-              className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
-              placeholder="https://yourwebsite.com"
-            />
-          </div>
+        <div>
+          <label className="mb-1 block text-sm font-medium">Name</label>
+          <input
+            name="name"
+            value={form.name}
+            onChange={onChange}
+            required
+            className="w-full rounded-lg border border-black/15 px-3 py-2 outline-none focus:border-black/30"
+            placeholder="Your name"
+          />
         </div>
 
         <div>
-          <label htmlFor="service" className="block text-sm font-medium mb-2">
-            Service Interested In
-          </label>
-          <select
-            id="service"
-            name="service"
-            className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
-            defaultValue=""
-          >
-            <option value="">Select a service</option>
-            <option value="local-seo">Local SEO</option>
-            <option value="seo">SEO</option>
-            <option value="not-sure">Not sure yet</option>
-          </select>
+          <label className="mb-1 block text-sm font-medium">Email</label>
+          <input
+            name="email"
+            value={form.email}
+            onChange={onChange}
+            required
+            type="email"
+            className="w-full rounded-lg border border-black/15 px-3 py-2 outline-none focus:border-black/30"
+            placeholder="you@email.com"
+          />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2">
-            Tell us about your goals
-          </label>
+          <label className="mb-1 block text-sm font-medium">Phone</label>
+          <input
+            name="phone"
+            value={form.phone}
+            onChange={onChange}
+            className="w-full rounded-lg border border-black/15 px-3 py-2 outline-none focus:border-black/30"
+            placeholder="+1 (555) 123-4567"
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium">Website</label>
+          <input
+            name="website"
+            value={form.website}
+            onChange={onChange}
+            className="w-full rounded-lg border border-black/15 px-3 py-2 outline-none focus:border-black/30"
+            placeholder="https://yourwebsite.com"
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium">Message</label>
           <textarea
-            id="message"
             name="message"
+            value={form.message}
+            onChange={onChange}
             rows={4}
-            className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors resize-none"
-            placeholder="What are you looking to achieve with SEO?"
+            className="w-full rounded-lg border border-black/15 px-3 py-2 outline-none focus:border-black/30"
+            placeholder="Tell us what you need..."
           />
         </div>
 
         <button
           type="submit"
-          disabled={status === 'loading'}
-          className="w-full bg-brand hover:bg-brand-dark text-white py-4 rounded-lg font-semibold transition-colors disabled:opacity-60"
+          disabled={isSubmitting}
+          className="w-full rounded-lg bg-black px-4 py-2 font-semibold text-white disabled:opacity-60"
         >
-          {status === 'loading' ? 'Sending...' : 'Request Free Audit'}
+          {isSubmitting ? 'Sending…' : buttonText}
         </button>
 
         {status === 'success' && (
-          <p className="text-green-400 text-sm text-center">
-            ✓ Thanks! We'll be in touch within 24 hours.
+          <p className="text-sm text-green-700">
+            Thanks! We received your message.
           </p>
         )}
         {status === 'error' && (
-          <p className="text-red-400 text-sm text-center">
+          <p className="text-sm text-red-700">
             Something went wrong. Please try again.
           </p>
         )}
-
-        <p className="text-xs text-text-secondary text-center">
-          We'll respond within 24 hours. No spam, ever.
-        </p>
       </form>
     </div>
   );
