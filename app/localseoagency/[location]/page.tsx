@@ -123,14 +123,15 @@ export default function LocalSeoLocationPage({
         </div>
       </div>
 
+        </div>
       {/* HERO */}
       <section className="relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
           <img
             src={location.image}
-            alt={`Local SEO in ${location.name}`}
-            className="h-full w-full object-cover object-center"
+            alt={`Local SEO Agency ${location.name}`}
+            className="w-full h-full object-cover"
           />
 
           {/* Darkness control: edit these 3 numbers */}
