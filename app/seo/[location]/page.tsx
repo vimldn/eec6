@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CTASection from '@/components/CTASection';
+import LeadForm from '@/components/LeadForm';
 import { locations, getLocationBySlug, getAllLocationSlugs } from '@/data/locations';
 
 interface PageProps {
@@ -62,36 +63,44 @@ export default function SEOLocationPage({ params }: PageProps) {
 
         {/* Content */}
         <div className="relative z-10 px-6 py-16 w-full">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              SEO Agency in <span className="text-brand underline decoration-brand/30">{location.name}</span>
-            </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mb-4 leading-relaxed">
-              Competing for organic search visibility in {location.name} means going up against some of the most well-resourced companies in the world. Our {location.name} SEO campaigns are built for this level of competition—combining technical excellence, strategic content, and authoritative link building that delivers measurable results.
-            </p>
-            <p className="text-lg text-text-muted max-w-3xl mb-8 leading-relaxed">
-              Since 2011, we've helped {location.name} businesses climb to the top of Google's organic results. Whether you're an e-commerce brand seeking national visibility, a professional service firm targeting {location.name} clients, or a growing startup ready to scale, our proven SEO methodology drives the traffic, leads, and revenue that fuel growth.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                href="/contact/"
-                className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
-              >
-                Get Your Free Audit
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <a 
-                href="tel:+442012345678"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 px-6 py-3.5 rounded-lg font-semibold transition-all"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Call Us Now
-              </a>
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+                SEO Agency in <span className="text-brand underline decoration-brand/30">{location.name}</span>
+              </h1>
+              <p className="text-xl text-text-secondary max-w-3xl mb-4 leading-relaxed">
+                Competing for organic search visibility in {location.name} means going up against some of the most well-resourced companies in the world. Our {location.name} SEO campaigns are built for this level of competition—combining technical excellence, strategic content, and authoritative link building that delivers measurable results.
+              </p>
+              <p className="text-lg text-text-muted max-w-3xl mb-8 leading-relaxed">
+                Since 2011, we've helped {location.name} businesses climb to the top of Google's organic results. Whether you're an e-commerce brand seeking national visibility, a professional service firm targeting {location.name} clients, or a growing startup ready to scale, our proven SEO methodology drives the traffic, leads, and revenue that fuel growth.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact/"
+                  className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
+                >
+                  Get Your Free Audit
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <a
+                  href="tel:+442012345678"
+                  className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 px-6 py-3.5 rounded-lg font-semibold transition-all"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Call Us Now
+                </a>
+              </div>
             </div>
+            <LeadForm
+              page="SEO Location Page"
+              location={location.name}
+              title={`Get Your Free SEO Audit in ${location.name}`}
+              buttonText="Request Free Audit"
+            />
           </div>
         </div>
       </section>
