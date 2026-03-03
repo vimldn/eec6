@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import Schema from '@/components/Schema';
 import './globals.css';
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://extraedgeclub.com'),
   applicationName: 'Extra Edge Club',
@@ -33,7 +32,6 @@ export const metadata: Metadata = {
     images: ['/logo.png'],
   },
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -44,12 +42,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
-          {`
+          {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-WDHLP2MX1P');
-          `}
+          }
         </Script>
       </head>
       <body className="bg-dark text-white antialiased">
