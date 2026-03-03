@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: 'en_KE',
   },
   verification: {
-    google: '9pHSXLFoWrSi58W1ZhO-oUDaGORNAp8yDcM_zkS75DE',
+    google: 'JUJUgKhz4l3wDbUsS5QQmRbhymeh_h5dIKMwmlsLGBQ',
   },
 };
 
