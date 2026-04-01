@@ -15,6 +15,7 @@ export interface BlogPost {
   publishedDate: string;
   readingTime: number;
   category: string;
+  location?: string;
   tags: string[];
   contentHtml: string;
 }
@@ -44,6 +45,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       publishedDate: data.publishedDate ?? '',
       readingTime: estimateReadingTime(content),
       category: data.category ?? 'SEO',
+      location: data.location ?? undefined,
       tags: data.tags ?? [],
       contentHtml,
     };
