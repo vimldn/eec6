@@ -193,7 +193,7 @@ export default function Navigation() {
               <div className="px-6 py-4">
                 {[{ href: '/localseoagency/', label: 'Local SEO' }].map((item) => (
                   <Link
-                    key={service.slug}
+                    key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block py-4 transition-colors"
