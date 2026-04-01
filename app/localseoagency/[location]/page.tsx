@@ -77,7 +77,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
           </div>
           {/* Right stat */}
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 64, color: '#e85d26', lineHeight: 1 }}>{location.businesses}</div>
+            <div className="v1-headline" style={{ fontSize: 64, color: '#e85d26', lineHeight: 1 }}>{location.businesses}</div>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>Local businesses</div>
           </div>
         </div>
@@ -105,8 +105,12 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
 
         {/* Right — compact form on white */}
         <div style={{ background: '#ffffff', padding: '40px 36px', borderLeft: 'none' }}>
-          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, letterSpacing: '0.03em', color: '#111110', marginBottom: 20, lineHeight: 1 }}>
-            Free audit in <span style={{ color: '#e85d26' }}>{location.name}</span>
+          <div
+            className="v1-headline"
+            style={{ fontSize: 28, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#111110', marginBottom: 20, lineHeight: 1 }}
+          >
+            Free audit in{' '}
+            <span style={{ color: '#e85d26' }}>{location.name}</span>
           </div>
           <LeadForm
             page="Local SEO Location Page"
