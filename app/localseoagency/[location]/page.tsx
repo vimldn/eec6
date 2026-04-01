@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CTASection from '@/components/CTASection';
+import LocationIndustryLinks from '@/components/LocationIndustryLinks';
 import LeadForm from '@/components/LeadForm';
 import { locations, getLocationBySlug, getAllLocationSlugs } from '@/data/locations';
 
@@ -123,27 +124,27 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       </section>
 
 {/* Quick Stats */}
-      <section className="px-6 py-8 bg-dark-lighter border-y border-white/[0.08]">
+      <section style={{ background: "#f7f5f0", borderBottom: "3px solid #111110", padding: "32px clamp(24px,5vw,56px)" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6">
           <div className="text-center">
-            <div className="text-xl text-brand">{location.population}</div>
-            <div className="text-xs text-text-secondary">Population</div>
+            <div className="v1-headline" style={{ fontSize: 28, color: "#e85d26", lineHeight: 1 }}>{location.population}</div>
+            <div className="v1-label" style={{ fontSize: 10, color: "#888888", letterSpacing: "0.15em", marginTop: 4 }}>Population</div>
           </div>
           <div className="text-center">
-            <div className="text-xl text-brand">{location.businesses}</div>
-            <div className="text-xs text-text-secondary">Businesses</div>
+            <div className="v1-headline" style={{ fontSize: 28, color: "#e85d26", lineHeight: 1 }}>{location.businesses}</div>
+            <div className="v1-label" style={{ fontSize: 10, color: "#888888", letterSpacing: "0.15em", marginTop: 4 }}>Businesses</div>
           </div>
           <div className="text-center">
-            <div className="text-xl text-brand">{location.searchVolume}</div>
-            <div className="text-xs text-text-secondary">Monthly Searches</div>
+            <div className="v1-headline" style={{ fontSize: 28, color: "#e85d26", lineHeight: 1 }}>{location.searchVolume}</div>
+            <div className="v1-label" style={{ fontSize: 10, color: "#888888", letterSpacing: "0.15em", marginTop: 4 }}>Monthly Searches</div>
           </div>
           <div className="text-center">
-            <div className="text-xl text-brand">{location.avgRent}</div>
-            <div className="text-xs text-text-secondary">Avg. Commercial Rent</div>
+            <div className="v1-headline" style={{ fontSize: 28, color: "#e85d26", lineHeight: 1 }}>{location.avgRent}</div>
+            <div className="v1-label" style={{ fontSize: 10, color: "#888888", letterSpacing: "0.15em", marginTop: 4 }}>Avg. Commercial Rent</div>
           </div>
           <div className="text-center md:col-span-1 col-span-2">
-            <div className="text-xl text-brand">Since 2011</div>
-            <div className="text-xs text-text-secondary">Serving {location.name}</div>
+            <div className="v1-headline" style={{ fontSize: 28, color: "#e85d26", lineHeight: 1 }}>Since 2011</div>
+            <div className="v1-label" style={{ fontSize: 10, color: "#888888", letterSpacing: "0.15em", marginTop: 4 }}>Serving {location.name}</div>
           </div>
         </div>
       </section>
@@ -152,13 +153,13 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
           <div>
-            <p className="text-xs uppercase tracking-wider text-brand mb-3">
+            <p className="section-label">
               About {location.name}
             </p>
             <h2 className="text-3xl mb-6 tracking-tight">
               The {location.name} Business Landscape
             </h2>
-            <div className="space-y-4 text-text-muted leading-relaxed">
+            <div className="v1-body space-y-4 leading-relaxed" style={{ color: "#888888" }}>
               <p>{location.description}</p>
               <p>{location.businessLandscape}</p>
               <p>
@@ -169,7 +170,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
           </div>
 
           <div>
-            <div className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
+            <div style={{ background: "#ffffff", border: "2px solid #111110", padding: "36px 32px" }}>
               <h3 className="text-xl font-semibold mb-6">Key Industries in {location.name}</h3>
 
               <div className="flex flex-wrap gap-2 mb-8">
@@ -186,7 +187,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
               <h3 className="text-xl font-semibold mb-4">Notable Landmarks</h3>
               <ul className="space-y-2">
                 {location.landmarks.map((landmark, i) => (
-                  <li key={i} className="flex items-center gap-3 text-text-muted">
+                  <li key={i} className="v1-body flex items-center gap-3" style={{ color: "#888888" }}>
                     <svg
                       className="w-5 h-5 text-brand flex-shrink-0"
                       fill="none"
@@ -216,13 +217,13 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       </section>
 
       {/* Why Local SEO */}
-      <section className="px-6 py-20 bg-dark-lighter">
+      <section style={{ background: "#f7f5f0", borderBottom: "3px solid #111110", padding: "clamp(40px,5vw,72px) clamp(24px,5vw,56px)" }}>
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">Why Local SEO Matters</p>
+          <p className="section-label">Why Local SEO Matters</p>
           <h2 className="text-3xl mb-6 tracking-tight">
             Why Your {location.name} Business Needs Local SEO
           </h2>
-          <div className="space-y-4 text-text-muted leading-relaxed text-lg">
+          <div className="v1-body space-y-4 leading-relaxed" style={{ color: "#888888", fontSize: 16 }}>
             <p>{location.whyLocalSeo}</p>
             <p>
               Beyond “near me” searches, {location.name} customers compare businesses by reviews,
@@ -236,10 +237,10 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
               { number: '2-5x', label: 'more calls with review growth', desc: 'A strong review strategy improves rank and conversion.' },
               { number: '24/7', label: 'lead flow from search', desc: 'Local SEO works even when you’re not running ads.' },
             ].map((stat, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
+              <div key={i} style={{ background: "#ffffff", border: "1px solid #ddd", padding: "24px" }}>
                 <div className="text-3xl text-brand mb-2">{stat.number}</div>
                 <div className="font-semibold text-sm mb-1">{stat.label}</div>
-                <div className="text-sm text-text-secondary">{stat.desc}</div>
+                <div className="v1-body" style={{ fontSize: 13, color: "#888888" }}>{stat.desc}</div>
               </div>
             ))}
           </div>
@@ -247,10 +248,9 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       </section>
 
       {/* Process */}
-      <section className="px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">Our Approach</p>
-          <h2 className="text-3xl mb-10 tracking-tight">
+      <section style={{ background: "#f7f5f0", borderBottom: "3px solid #111110", padding: "clamp(40px,5vw,72px) clamp(24px,5vw,56px)" }}>
+          <p className="section-label">Our Approach</p>
+          <h2 className="v1-headline" style={{ fontSize: "clamp(32px,4vw,48px)", color: "#111110", marginBottom: 32 }}>
             How We Grow Local Rankings in {location.name}
           </h2>
 
@@ -273,30 +273,32 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
                 desc: 'We strengthen your location pages and topical coverage to win organic results alongside the map pack.',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-text-muted leading-relaxed">{item.desc}</p>
+              <div key={i} style={{ background: "#ffffff", border: "2px solid #111110", padding: "36px 32px" }}>
+                <h3 className="v1-headline" style={{ fontSize: 28, color: "#111110", marginBottom: 10 }}>{item.title}</h3>
+                <p className="v1-body" style={{ fontSize: 14, color: "#888888", lineHeight: 1.7 }}>{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Other Locations */}
-      <section className="px-6 py-20 bg-dark-lighter">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs uppercase tracking-wider text-brand mb-3">More Areas</p>
-          <h2 className="text-3xl mb-10 tracking-tight">Explore Other Local SEO Locations</h2>
+      <LocationIndustryLinks locationName={location.name} />
 
-          <div className="grid md:grid-cols-3 gap-6">
+      {/* Other Locations */}
+      <section style={{ background: "#f7f5f0", borderBottom: "3px solid #111110", padding: "clamp(40px,5vw,72px) clamp(24px,5vw,56px)" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="section-label">More Areas</p>
+          <h2 className="v1-headline" style={{ fontSize: "clamp(32px,4vw,48px)", color: "#111110", marginBottom: 32 }}>Explore Other Local SEO Locations</h2>
+
+          <div className="grid md:grid-cols-3" style={{ border: "1px solid #ddd" }}>
             {otherLocations.map((l) => (
               <Link
                 key={l.slug}
                 href={`/localseoagency/${l.slug}/`}
-                className="bg-dark-card border border-white/[0.08] rounded-2xl p-6 hover:border-white/20 transition-colors"
+                style={{ padding: "24px 28px", borderRight: "1px solid #ddd", background: "#ffffff", transition: "background .15s" }}
               >
-                <div className="font-semibold text-lg mb-2">{l.name}</div>
-                <div className="text-sm text-text-secondary">Local SEO services in {l.name}</div>
+                <div className="v1-headline" style={{ fontSize: 22, color: "#111110", marginBottom: 6 }}>{l.name}</div>
+                <div className="v1-body" style={{ fontSize: 13, color: "#888888" }}>Local SEO services in {l.name}</div>
               </Link>
             ))}
           </div>
