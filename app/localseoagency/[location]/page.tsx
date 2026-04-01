@@ -73,7 +73,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
             {/* Left */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight text-white">
                 Local SEO Agency in{' '}
                 <span className="text-brand underline decoration-brand/30">
                   {location.name}
@@ -138,23 +138,23 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       <section className="px-6 py-8 bg-dark-lighter border-y border-white/[0.08]">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6">
           <div className="text-center">
-            <div className="text-xl font-bold text-brand">{location.population}</div>
+            <div className="text-xl text-brand">{location.population}</div>
             <div className="text-xs text-text-secondary">Population</div>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-brand">{location.businesses}</div>
+            <div className="text-xl text-brand">{location.businesses}</div>
             <div className="text-xs text-text-secondary">Businesses</div>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-brand">{location.searchVolume}</div>
+            <div className="text-xl text-brand">{location.searchVolume}</div>
             <div className="text-xs text-text-secondary">Monthly Searches</div>
           </div>
           <div className="text-center">
-            <div className="text-xl font-bold text-brand">{location.avgRent}</div>
+            <div className="text-xl text-brand">{location.avgRent}</div>
             <div className="text-xs text-text-secondary">Avg. Commercial Rent</div>
           </div>
           <div className="text-center md:col-span-1 col-span-2">
-            <div className="text-xl font-bold text-brand">Since 2011</div>
+            <div className="text-xl text-brand">Since 2011</div>
             <div className="text-xs text-text-secondary">Serving {location.name}</div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
             <p className="text-xs uppercase tracking-wider text-brand mb-3">
               About {location.name}
             </p>
-            <h2 className="text-3xl font-bold mb-6 tracking-tight">
+            <h2 className="text-3xl mb-6 tracking-tight">
               The {location.name} Business Landscape
             </h2>
             <div className="space-y-4 text-text-muted leading-relaxed">
@@ -231,7 +231,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Why Local SEO Matters</p>
-          <h2 className="text-3xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl mb-6 tracking-tight">
             Why Your {location.name} Business Needs Local SEO
           </h2>
           <div className="space-y-4 text-text-muted leading-relaxed text-lg">
@@ -249,7 +249,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
               { number: '24/7', label: 'lead flow from search', desc: 'Local SEO works even when you’re not running ads.' },
             ].map((stat, i) => (
               <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
-                <div className="text-3xl font-bold text-brand mb-2">{stat.number}</div>
+                <div className="text-3xl text-brand mb-2">{stat.number}</div>
                 <div className="font-semibold text-sm mb-1">{stat.label}</div>
                 <div className="text-sm text-text-secondary">{stat.desc}</div>
               </div>
@@ -262,7 +262,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-wider text-brand mb-3">Our Approach</p>
-          <h2 className="text-3xl font-bold mb-10 tracking-tight">
+          <h2 className="text-3xl mb-10 tracking-tight">
             How We Grow Local Rankings in {location.name}
           </h2>
 
@@ -298,7 +298,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-wider text-brand mb-3">More Areas</p>
-          <h2 className="text-3xl font-bold mb-10 tracking-tight">Explore Other Local SEO Locations</h2>
+          <h2 className="text-3xl mb-10 tracking-tight">Explore Other Local SEO Locations</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {otherLocations.map((l) => (

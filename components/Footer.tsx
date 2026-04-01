@@ -16,15 +16,15 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <div
-                className="text-3xl leading-none tracking-wider text-white"
-                style={{ fontFamily: 'var(--font-display)' }}
+                className="v1-headline text-3xl text-white"
+                style={{ /* v1-headline via global h* rule */ }}
               >
                 Extra<span style={{ color: 'var(--brand)' }}>Edge</span> Club
               </div>
             </Link>
             <p
               className="text-sm leading-relaxed mb-6"
-              style={{ color: '#666', fontFamily: 'var(--font-body)' }}
+              style={{ color: '#666', /* v1-body via global p rule */ }}
             >
               SEO specialists helping UK businesses grow since 2011. Real results, not just rankings.
             </p>
@@ -59,8 +59,8 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4
-              className="text-xs uppercase tracking-[0.2em] mb-5"
-              style={{ fontFamily: 'var(--font-condensed)', fontWeight: 700, color: '#444' }}
+              className="v1-label text-xs mb-5"
+              style={{ /* v1-label */ color: '#444' }}
             >
               Services
             </h4>
@@ -69,8 +69,8 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/${service.slug}/`}
-                    className="text-sm transition-colors hover:text-brand"
-                    style={{ color: '#666', fontFamily: 'var(--font-body)' }}
+                    className="v1-body text-sm transition-colors hover:text-brand"
+                    style={{ color: '#666', /* v1-body via global p rule */ }}
                   >
                     {service.name}
                   </Link>
@@ -82,8 +82,8 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4
-              className="text-xs uppercase tracking-[0.2em] mb-5"
-              style={{ fontFamily: 'var(--font-condensed)', fontWeight: 700, color: '#444' }}
+              className="v1-label text-xs mb-5"
+              style={{ /* v1-label */ color: '#444' }}
             >
               Company
             </h4>
@@ -98,8 +98,8 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm transition-colors hover:text-brand"
-                    style={{ color: '#666', fontFamily: 'var(--font-body)' }}
+                    className="v1-body text-sm transition-colors hover:text-brand"
+                    style={{ color: '#666', /* v1-body via global p rule */ }}
                   >
                     {label}
                   </Link>
@@ -111,8 +111,8 @@ export default function Footer() {
           {/* Locations */}
           <div>
             <h4
-              className="text-xs uppercase tracking-[0.2em] mb-5"
-              style={{ fontFamily: 'var(--font-condensed)', fontWeight: 700, color: '#444' }}
+              className="v1-label text-xs mb-5"
+              style={{ /* v1-label */ color: '#444' }}
             >
               London Areas
             </h4>
@@ -121,8 +121,8 @@ export default function Footer() {
                 <li key={location.slug}>
                   <Link
                     href={`/localseoagency/${location.slug}/`}
-                    className="text-sm transition-colors hover:text-brand"
-                    style={{ color: '#666', fontFamily: 'var(--font-body)' }}
+                    className="v1-body text-sm transition-colors hover:text-brand"
+                    style={{ color: '#666', /* v1-body via global p rule */ }}
                   >
                     {location.name}
                   </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
           className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           style={{ borderTop: '1px solid #222' }}
         >
-          <p className="text-sm" style={{ color: '#555', fontFamily: 'var(--font-body)' }}>
+          <p className="text-sm" style={{ color: '#555', /* v1-body via global p rule */ }}>
             © {new Date().getFullYear()} Extra Edge Club Ltd. All rights reserved. · SEO Specialists since 2011.
           </p>
           <div className="flex gap-6">
@@ -148,10 +148,9 @@ export default function Footer() {
               <Link
                 key={href}
                 href={href}
-                className="text-xs uppercase tracking-wider transition-colors hover:text-brand"
+                className="v1-label text-xs transition-colors hover:text-brand"
                 style={{
                   color: '#555',
-                  fontFamily: 'var(--font-condensed)',
                   fontWeight: 700,
                   letterSpacing: '0.1em',
                 }}

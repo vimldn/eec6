@@ -16,7 +16,7 @@ export default function BlogPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">Blog</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+          <h1 className="text-4xl md:text-5xl mb-6 font-display">
             SEO insights for <span className="text-brand">UK businesses</span>
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -45,7 +45,7 @@ export default function BlogPage() {
                   </div>
 
                   <div className="p-6 pt-3">
-                    <h2 className="text-lg font-bold mb-3 group-hover:text-brand transition-colors leading-snug">
+                    <h2 className="text-lg mb-3 group-hover:text-brand transition-colors leading-snug">
                       {post.title}
                     </h2>
 

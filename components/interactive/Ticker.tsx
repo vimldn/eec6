@@ -1,7 +1,5 @@
 'use client';
 
-// Pure CSS ticker — no JS state, no hydration mismatch risk.
-// Items duplicated so the loop is seamless.
 const items = [
   'Local SEO', 'National SEO', 'Google Maps', 'Sixes Cricket',
   "Gentleman's Journal", '14 Years', 'Real Results', 'Makwana Solicitors',
@@ -12,20 +10,21 @@ export default function Ticker() {
   return (
     <div
       className="overflow-hidden py-4"
-      style={{ background: 'var(--ink)', borderBottom: '3px solid var(--ink)' }}
+      style={{ background: '#111110', borderBottom: '3px solid #111110' }}
       aria-hidden="true"
     >
-      <div className="ticker-track flex gap-0 whitespace-nowrap w-max">
-        {/* Duplicate to create seamless loop */}
+      <div className="ticker-track flex whitespace-nowrap w-max">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="inline-flex items-center">
+            {/* Bebas Neue via v1-headline */}
             <span
-              className="px-8 text-white text-lg tracking-[0.18em] uppercase"
-              style={{ fontFamily: 'var(--font-display)' }}
+              className="v1-headline px-8 text-white"
+              style={{ fontSize: 18, letterSpacing: '0.2em' }}
             >
               {item}
             </span>
-            <span style={{ color: 'var(--brand)', fontSize: 10 }}>◆</span>
+            {/* Ticker dot — orange per spec */}
+            <span style={{ color: '#e85d26', fontSize: 9 }}>◆</span>
           </span>
         ))}
       </div>

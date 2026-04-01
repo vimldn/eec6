@@ -76,7 +76,7 @@ export default function SeoLocationPage({ params }: PageProps) {
           <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-2 items-start">
             {/* LEFT */}
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight text-white">
                 SEO Agency in{' '}
                 <span className="text-brand underline decoration-brand/30">
                   {location.name}
@@ -151,7 +151,7 @@ export default function SeoLocationPage({ params }: PageProps) {
       {/* (Optional) rest of page... keep your existing sections below */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-4">SEO Services in {location.name}</h2>
+          <h2 className="text-3xl mb-4">SEO Services in {location.name}</h2>
           <p className="text-text-muted">
             Add your location-specific content here (case studies, FAQs, process, etc).
           </p>
@@ -161,7 +161,7 @@ export default function SeoLocationPage({ params }: PageProps) {
       {/* Other locations (optional) */}
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-6xl">
-          <h3 className="text-2xl font-bold mb-6">More SEO Locations</h3>
+          <h3 className="text-2xl mb-6">More SEO Locations</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {locations
               .filter((l) => l.slug !== location.slug)

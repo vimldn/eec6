@@ -27,21 +27,21 @@ export default function HomePage() {
       <ClientsSection clients={clients} />
 
       {/* Why SEO Matters */}
-      <section style={{ borderBottom: '3px solid var(--ink)' }}>
+      <section style={{ borderBottom: '3px solid #111110' }}>
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-0">
           {/* Text — server-rendered, Google reads on first byte */}
           <div
             className="px-14 py-20"
-            style={{ borderRight: '2px solid var(--rule)' }}
+            style={{ borderRight: '1px solid #dddddd' }}
           >
             <p className="section-label">Why SEO Matters</p>
             <h2
               className="leading-[0.95] tracking-[0.02em] mb-8"
-              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 60px)', color: 'var(--ink)' }}
+              className="v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
             >
               The most cost-effective way to grow your business
             </h2>
-            <div className="space-y-5 leading-relaxed" style={{ color: 'var(--muted)', fontFamily: 'var(--font-body)', fontSize: 15 }}>
+            <div className="space-y-5 leading-relaxed" className="v1-body" style={{ fontSize: 15, color: '#888888' }}>
               <p>
                 Every day, millions of people search Google for products and services. Unlike paid
                 ads, where you pay for every click, SEO delivers compounding returns. The traffic you
@@ -72,13 +72,13 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section style={{ borderBottom: '3px solid var(--ink)', background: 'var(--dark)' }}>
+      <section style={{ borderBottom: '3px solid var(--ink)', background: '#f7f5f0' }}>
         <div className="max-w-6xl mx-auto px-14 py-20">
           <div className="mb-12">
             <p className="section-label">Our Services</p>
             <h2
               className="leading-[0.95]"
-              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(48px, 6vw, 72px)', color: 'var(--ink)' }}
+              className="v1-headline" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110' }}
             >
               Two ways we help you grow
             </h2>
@@ -91,12 +91,12 @@ export default function HomePage() {
       <StatsGrid />
 
       {/* Location links — 100% server-rendered, zero JS */}
-      <section style={{ borderBottom: '3px solid var(--ink)', background: '#fff' }}>
+      <section style={{ borderBottom: '3px solid var(--ink)', background: '#ffffff' }}>
         <div className="max-w-6xl mx-auto px-14 py-20">
           <p className="section-label">London Coverage</p>
           <h2
             className="mb-12 leading-[0.95]"
-            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 60px)', color: 'var(--ink)' }}
+            className="v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
           >
             SEO services across London
           </h2>
@@ -106,7 +106,7 @@ export default function HomePage() {
               <div key={service.slug}>
                 <h3
                   className="mb-5 uppercase tracking-[0.1em]"
-                  style={{ fontFamily: 'var(--font-condensed)', fontSize: 14, fontWeight: 700, color: 'var(--brand)' }}
+                  className="v1-label" style={{ fontSize: 14, color: '#e85d26', letterSpacing: '0.12em' }}
                 >
                   {service.name}
                 </h3>
@@ -116,7 +116,7 @@ export default function HomePage() {
                       <Link
                         href={`/${service.slug}/${location.slug}/`}
                         className="text-sm transition-colors block py-0.5 hover:text-brand"
-                        style={{ color: 'var(--mid)', fontFamily: 'var(--font-body)' }}
+                        className="v1-body" style={{ color: '#888888' }}
                       >
                         {location.name}
                       </Link>
@@ -126,7 +126,7 @@ export default function HomePage() {
                 <Link
                   href={`/${service.slug}/`}
                   className="inline-block mt-5 uppercase tracking-wider transition-colors"
-                  style={{ fontFamily: 'var(--font-condensed)', fontSize: 12, fontWeight: 700, color: 'var(--brand)' }}
+                  className="v1-label" style={{ fontSize: 12, color: '#e85d26', letterSpacing: '0.12em' }}
                 >
                   View all areas →
                 </Link>

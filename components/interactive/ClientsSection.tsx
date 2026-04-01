@@ -3,27 +3,25 @@
 import { motion } from 'framer-motion';
 import type { Client } from '@/data/clients';
 
-interface ClientsSectionProps {
-  clients: Client[];
-}
-
-export default function ClientsSection({ clients }: ClientsSectionProps) {
+export default function ClientsSection({ clients }: { clients: Client[] }) {
   return (
+    // Client strip — white background per spec
     <div
-      className="flex items-center px-10 py-6 gap-0 flex-wrap"
-      style={{ background: '#fff', borderBottom: '3px solid var(--ink)' }}
+      className="flex items-center px-10 py-6 flex-wrap gap-y-3"
+      style={{ background: '#ffffff', borderBottom: '3px solid #111110' }}
     >
+      {/* Label — Barlow Condensed 700 */}
       <span
-        className="text-xs uppercase tracking-[0.25em] pr-10 mr-10 whitespace-nowrap shrink-0"
+        className="v1-label text-xs shrink-0 pr-10 mr-10 whitespace-nowrap"
         style={{
-          fontFamily: 'var(--font-condensed)',
-          fontWeight: 700,
-          color: 'var(--mid)',
-          borderRight: '2px solid var(--ink)',
+          color: '#888888',
+          letterSpacing: '0.25em',
+          borderRight: '2px solid #111110',
         }}
       >
         Trusted by
       </span>
+
       <div className="flex flex-wrap gap-x-10 gap-y-2 items-center">
         {clients.map((client, i) => (
           <motion.span
@@ -32,15 +30,9 @@ export default function ClientsSection({ clients }: ClientsSectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.4 }}
-            className="cursor-default transition-colors"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 18,
-              letterSpacing: '0.08em',
-              color: '#ccc',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#ccc')}
+            // Client names — Bebas Neue, #dddddd default per spec
+            className="v1-headline cursor-default transition-colors hover:text-brand"
+            style={{ fontSize: 20, letterSpacing: '0.08em', color: '#dddddd' }}
           >
             {client.name}
           </motion.span>

@@ -20,7 +20,7 @@ export default function LocalSEOAgencyPage() {
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="section-label">Local SEO Agency</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+            <h1 className="text-4xl md:text-5xl mb-6 font-display">
               Local SEO Services Across <span className="text-brand">London</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mb-8">
@@ -44,7 +44,7 @@ export default function LocalSEOAgencyPage() {
       <section className="px-6 py-16 bg-dark-lighter">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 font-display">What is Local SEO?</h2>
+            <h2 className="text-3xl mb-6 font-display">What is Local SEO?</h2>
             <div className="space-y-4 text-text-muted">
               <p>
                 Local SEO is the process of optimising your online presence to attract more business from relevant local searches. When someone searches for "plumber near me" or "best restaurant in Shoreditch," local SEO determines which businesses appear.
@@ -65,7 +65,7 @@ export default function LocalSEOAgencyPage() {
               { number: '3x', label: 'more leads from Map Pack vs organic' }
             ].map((stat, i) => (
               <div key={i} className="bg-dark-card border border-white/[0.08]  p-5 text-center">
-                <div className="text-2xl font-bold text-brand mb-1">{stat.number}</div>
+                <div className="text-2xl text-brand mb-1">{stat.number}</div>
                 <div className="text-xs text-text-secondary">{stat.label}</div>
               </div>
             ))}
@@ -78,7 +78,7 @@ export default function LocalSEOAgencyPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-label">Our Coverage</p>
-            <h2 className="text-3xl md:text-4xl font-bold font-display">
+            <h2 className="text-3xl md:text-4xl font-display">
               Local SEO Services by Area
             </h2>
             <p className="text-text-secondary mt-4 max-w-2xl mx-auto">
@@ -129,7 +129,7 @@ export default function LocalSEOAgencyPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-label">What's Included</p>
-            <h2 className="text-3xl font-bold font-display">Our Local SEO Services</h2>
+            <h2 className="text-3xl font-display">Our Local SEO Services</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

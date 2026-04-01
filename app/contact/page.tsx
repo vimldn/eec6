@@ -40,7 +40,7 @@ export default function ContactPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">Contact Us</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl mb-6 tracking-tight">
             Let's talk about your <span className="text-brand">growth</span>
           </h1>
           <p className="text-xl text-text-secondary">
@@ -54,7 +54,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
           {/* Form */}
           <div className="bg-dark-card border border-white/[0.08]  p-8">
-            <h2 className="text-2xl font-bold mb-6">Get Your Free SEO Audit</h2>
+            <h2 className="text-2xl mb-6">Get Your Free SEO Audit</h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">What happens next?</h3>
+              <h3 className="text-xl mb-4">What happens next?</h3>
               <div className="space-y-4">
                 {[
                   { step: '1', title: 'We review your submission', desc: 'Our team will look at your website and understand your goals.' },
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   { step: '3', title: 'Strategy call', desc: 'We\'ll walk through our findings and discuss how we can help.' }
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
-                    <div className="w-8 h-8 bg-brand/20 rounded-full flex items-center justify-center text-brand font-bold text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-brand/20 rounded-full flex items-center justify-center text-brand text-sm flex-shrink-0">
                       {item.step}
                     </div>
                     <div>

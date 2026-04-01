@@ -60,7 +60,7 @@ export default function CaseStudyPage({ params }: PageProps) {
             <span className="text-xs text-text-secondary">{study.location}</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+          <h1 className="text-4xl md:text-5xl mb-6 font-display">
             {study.client}
           </h1>
 
@@ -77,7 +77,7 @@ export default function CaseStudyPage({ params }: PageProps) {
           </div>
 
           <div className="bg-dark-card border border-brand/30  p-8 inline-block">
-            <div className="text-5xl md:text-6xl font-bold gradient-text mb-2">
+            <div className="text-5xl md:text-6xl gradient-text mb-2">
               {study.heroStat.value}
             </div>
             <div className="text-text-secondary">{study.heroStat.label}</div>
@@ -92,7 +92,7 @@ export default function CaseStudyPage({ params }: PageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {study.results.map((result, i) => (
               <div key={i} className="text-center">
-                <div className="text-3xl font-bold text-brand mb-1 font-display">{result.value}</div>
+                <div className="text-3xl text-brand mb-1 font-display">{result.value}</div>
                 <div className="text-sm text-text-secondary">{result.label}</div>
               </div>
             ))}
@@ -104,7 +104,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">The Challenge</p>
-          <h2 className="text-3xl font-bold mb-6 font-display">What We Were Up Against</h2>
+          <h2 className="text-3xl mb-6 font-display">What We Were Up Against</h2>
           <p className="text-text-muted leading-relaxed text-lg">{study.challenge}</p>
         </div>
       </section>
@@ -113,11 +113,11 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16 bg-dark-lighter">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">Strategy</p>
-          <h2 className="text-3xl font-bold mb-10 font-display">How We Approached It</h2>
+          <h2 className="text-3xl mb-10 font-display">How We Approached It</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {study.strategy.map((step, i) => (
               <div key={i} className="bg-dark-card border border-white/[0.08]  p-6">
-                <div className="w-8 h-8 bg-brand/15 text-brand  flex items-center justify-center text-sm font-bold mb-4">
+                <div className="w-8 h-8 bg-brand/15 text-brand  flex items-center justify-center text-sm mb-4">
                   {i + 1}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{step.title}</h3>
@@ -132,7 +132,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">Outcome</p>
-          <h2 className="text-3xl font-bold mb-6 font-display">The Results</h2>
+          <h2 className="text-3xl mb-6 font-display">The Results</h2>
           <p className="text-text-muted leading-relaxed text-lg mb-10">{study.outcome}</p>
 
           {study.quote && (
@@ -158,7 +158,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       {otherStudies.length > 0 && (
         <section className="px-6 py-16 bg-dark-lighter">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8">More Case Studies</h2>
+            <h2 className="text-2xl mb-8">More Case Studies</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {otherStudies.map((cs) => (
                 <Link
@@ -168,7 +168,7 @@ export default function CaseStudyPage({ params }: PageProps) {
                 >
                   <span className="text-xs text-text-secondary mb-2 block">{cs.industry}</span>
                   <div className="font-semibold mb-1">{cs.client}</div>
-                  <div className="text-brand font-bold">{cs.heroStat.value}</div>
+                  <div className="text-brand ">{cs.heroStat.value}</div>
                   <div className="text-xs text-text-secondary">{cs.heroStat.label}</div>
                 </Link>
               ))}

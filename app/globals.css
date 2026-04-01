@@ -220,65 +220,82 @@ textarea.bg-dark::placeholder {
 
 button, a { transition: all 0.2s ease; }
 
-/* ── V1 Concrete: global heading typography ────────────────────
-   All h1/h2/h3 inherit Bebas Neue automatically.
-   No per-page patching needed for new pages.
-   ────────────────────────────────────────────────────────────── */
-h1, h2, h3 {
+
+/* ══════════════════════════════════════════════════════════════
+   V1 CONCRETE — COMPLETE TYPOGRAPHY SYSTEM
+   Rule: every font assignment via class, never inline style.
+   Bebas Neue = weight 400 ONLY. Never combine with font-bold.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Bebas Neue — headlines, stats, ticker, quote, logo ── */
+h1, h2, h3,
+.v1-headline {
   font-family: var(--font-display, 'Bebas Neue', sans-serif);
+  font-weight: 400; /* Bebas Neue is 400 ONLY — never request other weights */
   letter-spacing: 0.02em;
   line-height: 0.95;
-  color: var(--text-primary);
+  color: #111110;
 }
+/* Explicitly block font-bold from breaking Bebas Neue on tagged headings */
+h1.font-bold, h2.font-bold, h3.font-bold { font-weight: 400 !important; }
+
 h4, h5, h6 {
   font-family: var(--font-condensed, 'Barlow Condensed', sans-serif);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: #111110;
 }
 
-/* ── Navigation font ── */
-nav a, nav button {
+/* ── Barlow Condensed 700 — nav, labels, buttons, tags, footer ── */
+.v1-label {
   font-family: var(--font-condensed, 'Barlow Condensed', sans-serif);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-/* ── Body copy inherits Barlow ── */
-p, li, td, label, input, textarea, select, span {
+/* ── Barlow 400 — body copy only. Never bold. ── */
+.v1-body,
+p, li, td, blockquote {
   font-family: var(--font-body, 'Barlow', sans-serif);
+  font-weight: 400;
 }
 
-/* ── .font-display override keeps working ── */
-.font-display {
-  font-family: var(--font-display, 'Bebas Neue', sans-serif) !important;
-  line-height: 0.95;
+/* ── Section label — Barlow Condensed 700 ── */
+.section-label {
+  font-family: var(--font-condensed, 'Barlow Condensed', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #e85d26;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.font-condensed {
-  font-family: var(--font-condensed, 'Barlow Condensed', sans-serif) !important;
-}
+.section-label::before { content: '▶'; font-size: 7px; }
 
-/* ── V1 card style — sharp corners, ink border ── */
-.bg-dark-card {
-  border-color: rgba(17, 17, 16, 0.12);
-}
-
-/* ── Chip/badge on light bg ── */
-.bg-white\/10 {
-  background-color: rgba(17, 17, 16, 0.08) !important;
-}
-.bg-white\/5 {
-  background-color: rgba(17, 17, 16, 0.05) !important;
-}
-
-/* ── Location page hero text stays white (on dark image overlay) ── */
-.location-hero-text { color: #fff !important; }
-
-/* ── Outline text — reliable cross-browser stroke treatment ────
-   paint-order ensures stroke renders BEHIND fill so it doesn't
-   bleed inward. Defined as a class so it applies from the
-   stylesheet before JS hydrates, works on mobile Safari. ────── */
+/* ── Outline text — reliable cross-browser stroke ── */
 .text-outline {
-  -webkit-text-stroke: 2px #111110;   /* hardcoded — no CSS var in webkit-text-stroke on mobile */
+  -webkit-text-stroke: 2px #111110;
   color: transparent;
   paint-order: stroke fill;
+}
+
+/* ── Button text — Barlow Condensed 700 ── */
+.btn-fill, .btn-out {
+  font-family: var(--font-condensed, 'Barlow Condensed', sans-serif) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #e85d26, #f0a07a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

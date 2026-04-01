@@ -15,7 +15,7 @@ export default function AboutPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">About Us</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+          <h1 className="text-4xl md:text-5xl mb-6 font-display">
             SEO specialists since <span className="text-brand">2011</span>
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 font-display">Our Story</h2>
+            <h2 className="text-3xl mb-6 font-display">Our Story</h2>
             <div className="text-text-muted space-y-4 leading-relaxed">
               <p>
                 We started Extra Edge Club in 2011 when SEO was still considered a dark art by most businesses. We saw an opportunity to bring transparency, ethics, and genuine results to an industry full of snake oil salesmen.
@@ -50,7 +50,7 @@ export default function AboutPage() {
               { number: '£4.2M', label: 'Revenue generated' }
             ].map((stat, i) => (
               <div key={i} className="bg-dark-card border border-white/[0.08]  p-6 text-center">
-                <div className="text-3xl font-bold text-brand mb-1 font-display">{stat.number}</div>
+                <div className="text-3xl text-brand mb-1 font-display">{stat.number}</div>
                 <div className="text-sm text-text-secondary">{stat.label}</div>
               </div>
             ))}
@@ -61,7 +61,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center font-display">How We Work</h2>
+          <h2 className="text-3xl mb-10 text-center font-display">How We Work</h2>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -90,7 +90,7 @@ export default function AboutPage() {
       {/* Clients */}
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center font-display">Clients We've Worked With</h2>
+          <h2 className="text-3xl mb-10 text-center font-display">Clients We've Worked With</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clients.map((client, i) => (
