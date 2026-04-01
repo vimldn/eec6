@@ -36,12 +36,11 @@ export default function HomePage() {
           >
             <p className="section-label">Why SEO Matters</p>
             <h2
-              className="leading-[0.95] tracking-[0.02em] mb-8"
-              className="v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
+              className="v1-headline leading-none mb-8" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
             >
               The most cost-effective way to grow your business
             </h2>
-            <div className="space-y-5 leading-relaxed" className="v1-body" style={{ fontSize: 15, color: '#888888' }}>
+            <div className="v1-body space-y-5 leading-relaxed" style={{ fontSize: 15, color: '#888888' }}>
               <p>
                 Every day, millions of people search Google for products and services. Unlike paid
                 ads, where you pay for every click, SEO delivers compounding returns. The traffic you
@@ -77,8 +76,7 @@ export default function HomePage() {
           <div className="mb-12">
             <p className="section-label">Our Services</p>
             <h2
-              className="leading-[0.95]"
-              className="v1-headline" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110' }}
+              className="v1-headline leading-none" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110' }}
             >
               Two ways we help you grow
             </h2>
@@ -95,8 +93,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-14 py-20">
           <p className="section-label">London Coverage</p>
           <h2
-            className="mb-12 leading-[0.95]"
-            className="v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
+            className="mb-12 leading-[0.95] v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}
           >
             SEO services across London
           </h2>
@@ -105,8 +102,7 @@ export default function HomePage() {
             {services.map((service) => (
               <div key={service.slug}>
                 <h3
-                  className="mb-5 uppercase tracking-[0.1em]"
-                  className="v1-label" style={{ fontSize: 14, color: '#e85d26', letterSpacing: '0.12em' }}
+                  className="mb-5 uppercase tracking-[0.1em] v1-label" style={{ fontSize: 14, color: '#e85d26', letterSpacing: '0.12em' }}
                 >
                   {service.name}
                 </h3>
@@ -115,8 +111,7 @@ export default function HomePage() {
                     <li key={location.slug}>
                       <Link
                         href={`/${service.slug}/${location.slug}/`}
-                        className="text-sm transition-colors block py-0.5 hover:text-brand"
-                        className="v1-body" style={{ color: '#888888' }}
+                        className="text-sm transition-colors block py-0.5 hover:text-brand v1-body" style={{ color: '#888888' }}
                       >
                         {location.name}
                       </Link>
@@ -125,8 +120,7 @@ export default function HomePage() {
                 </ul>
                 <Link
                   href={`/${service.slug}/`}
-                  className="inline-block mt-5 uppercase tracking-wider transition-colors"
-                  className="v1-label" style={{ fontSize: 12, color: '#e85d26', letterSpacing: '0.12em' }}
+                  className="inline-block mt-5 uppercase tracking-wider transition-colors v1-label" style={{ fontSize: 12, color: '#e85d26', letterSpacing: '0.12em' }}
                 >
                   View all areas →
                 </Link>
