@@ -29,112 +29,86 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default function LocalSEOLocationPage({ params }: PageProps) {
   const location = getLocationBySlug(params.location);
-
-  if (!location) {
-    notFound();
-  }
+  if (!location) notFound();
 
   const otherLocations = locations.filter(l => l.slug !== location.slug).slice(0, 6);
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="px-6 pt-6">
-        <div className="max-w-6xl mx-auto">
-          <nav className="text-sm text-text-secondary">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">→</span>
-            <Link href="/localseoagency/" className="hover:text-white transition-colors">
-              Local SEO
-            </Link>
-            <span className="mx-2">→</span>
-            <span className="text-brand">{location.name}</span>
-          </nav>
-        </div>
+      {/* ── Breadcrumb ── */}
+      <div style={{ background: '#f7f5f0', borderBottom: '1px solid #ddd', padding: '8px 40px' }}>
+        <nav style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#888' }}>
+          <Link href="/" style={{ color: '#888', textDecoration: 'none' }}>Home</Link>
+          <span style={{ margin: '0 8px' }}>→</span>
+          <Link href="/localseoagency/" style={{ color: '#888', textDecoration: 'none' }}>Local SEO</Link>
+          <span style={{ margin: '0 8px' }}>→</span>
+          <span style={{ color: '#e85d26' }}>{location.name}</span>
+        </nav>
       </div>
 
-      {/* Hero with Location Image */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={location.image}
-            alt={`Local SEO Agency ${location.name}`}
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Darkness control: edit these values */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/90 to-black/90" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 px-6 py-16 w-full">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-            {/* Left */}
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight text-white">
-                Local SEO Agency in{' '}
-                <span className="text-brand underline decoration-brand/30">
-                  {location.name}
-                </span>
-              </h1>
-
-              <p className="text-xl text-white max-w-3xl mb-4 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
-                Competing for local search visibility in {location.name} means standing out among {location.businesses} businesses all vying for the same customers. Our {location.name} local SEO campaigns are built for this level of competition—combining Google Business Profile mastery, strategic citation building, and review generation systems that deliver measurable results.
-              </p>
-
-              <p className="text-lg text-white max-w-3xl mb-8 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
-                Since 2011, we've helped {location.name} businesses climb to the top of Google Maps and the local pack. Whether you're a restaurant looking to fill tables, a tradesperson seeking local jobs, or a professional service firm targeting {location.name} clients, our proven local SEO methodology drives the calls, bookings, and foot traffic that fuel growth.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="#lead-form"
-                  className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
-                >
-                  Get Your Free Audit
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-
-                <a
-                  href="#lead-form"
-                  className="inline-flex items-center gap-2 border border-white/25 bg-white/5 hover:bg-white/10 text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  Get in Touch
-                </a>
-              </div>
+      {/* ── V2 BANNER: panoramic image strip with location name stamped over ── */}
+      <section style={{ position: 'relative', height: 240, overflow: 'hidden', borderBottom: '3px solid #111110' }}>
+        <img
+          src={location.image}
+          alt={location.name}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,10,0.55)' }} />
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px' }}>
+          {/* Location name in huge Bebas Neue */}
+          <div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#e85d26', display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+              <span style={{ fontSize: 7 }}>▶</span>
+              Local SEO Agency
             </div>
-
-            {/* Right: Lead Form */}
-            <div id="lead-form" className="w-full max-w-xl lg:justify-self-end">
-              <LeadForm
-                page="Local SEO Location Page"
-                location={location.name}
-                title={`Get Your Free Local SEO Audit in ${location.name}`}
-                buttonText="Request Free Audit"
-              />
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(64px, 9vw, 112px)', color: '#fff', lineHeight: 0.9, letterSpacing: '0.02em' }}>
+              {location.name}
             </div>
+          </div>
+          {/* Right stat */}
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 64, color: '#e85d26', lineHeight: 1 }}>{location.businesses}</div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>Local businesses</div>
           </div>
         </div>
       </section>
 
-      {/* Quick Stats */}
+      {/* ── Below banner: content left + compact form right ── */}
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 420px', borderBottom: '3px solid #111110' }} id="lead-form">
+        {/* Left — headline, body, CTAs */}
+        <div style={{ background: '#f7f5f0', padding: '52px 52px', borderRight: '3px solid #111110' }}>
+          <h1 className="v1-headline" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110', marginBottom: 20 }}>
+            Local SEO Agency in{' '}
+            <span style={{ color: '#e85d26' }}>{location.name}</span>
+          </h1>
+          <p className="v1-body" style={{ fontSize: 15, color: '#888888', lineHeight: 1.7, maxWidth: 520, marginBottom: 14 }}>
+            Competing for local search visibility in {location.name} means standing out among {location.businesses} businesses all vying for the same customers. Our {location.name} local SEO campaigns combine Google Business Profile mastery, strategic citation building, and review generation.
+          </p>
+          <p className="v1-body" style={{ fontSize: 15, color: '#888888', lineHeight: 1.7, maxWidth: 520, marginBottom: 32 }}>
+            Since 2011, we&apos;ve helped {location.name} businesses climb to the top of Google Maps and the local pack.
+          </p>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <a href="#lead-form" className="btn-fill">Get Your Free Audit →</a>
+            <a href="/contact/" className="btn-out">Get in Touch</a>
+          </div>
+        </div>
+
+        {/* Right — compact form on white */}
+        <div style={{ background: '#ffffff', padding: '40px 36px', borderLeft: 'none' }}>
+          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, letterSpacing: '0.03em', color: '#111110', marginBottom: 20, lineHeight: 1 }}>
+            Free audit in <span style={{ color: '#e85d26' }}>{location.name}</span>
+          </div>
+          <LeadForm
+            page="Local SEO Location Page"
+            location={location.name}
+            title=""
+            variant="light"
+            buttonText="Request Free Audit"
+          />
+        </div>
+      </section>
+
+{/* Quick Stats */}
       <section className="px-6 py-8 bg-dark-lighter border-y border-white/[0.08]">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6">
           <div className="text-center">
