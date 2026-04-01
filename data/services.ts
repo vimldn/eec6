@@ -23,23 +23,7 @@ export const services: Service[] = [
       'Dominate your service area',
       'Build local trust and authority'
     ]
-  },
-  {
-    slug: 'seo',
-    name: 'SEO',
-    title: 'SEO Agency',
-    shortDesc: 'Full-scale organic search strategy to increase visibility, traffic, and conversions across London.',
-    longDesc: 'Our comprehensive SEO service covers everything you need to rank higher and drive more organic traffic. From technical SEO and on-page optimisation to content strategy and link building, we take a holistic approach to sustainable organic growth.',
-    icon: '🚀',
-    benefits: [
-      'Sustainable organic traffic growth',
-      'Lower cost per acquisition over time',
-      'Build authority in your industry',
-      'Outrank competitors',
-      'Compound returns on investment'
-    ]
-  }
-];
+  }];
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find(service => service.slug === slug);
