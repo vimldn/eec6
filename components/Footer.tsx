@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { services } from '@/data/services';
 import { locations } from '@/data/locations';
 
 export default function Footer() {
@@ -16,7 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <div
-                className="v1-headline text-3xl text-white"
+                className="v1-headline text-3xl" style={{ color: "#ffffff" }}
                 style={{ /* v1-headline via global h* rule */ }}
               >
                 Extra<span style={{ color: 'var(--brand)' }}>Edge</span> Club
@@ -58,24 +57,17 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4
-              className="v1-label text-xs mb-5"
-              style={{ /* v1-label */ color: '#444' }}
-            >
-              Services
-            </h4>
+            <h4 className="v1-label text-xs mb-5" style={{ color: '#444' }}>Services</h4>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/${service.slug}/`}
-                    className="v1-body text-sm transition-colors hover:text-brand"
-                    style={{ color: '#666', /* v1-body via global p rule */ }}
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/services/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>All Services</Link></li>
+              <li><Link href="/localseoagency/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Local SEO</Link></li>
+              <li><Link href="/services/programmatic-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Programmatic SEO</Link></li>
+              <li><Link href="/services/seo-audit/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>SEO Audits</Link></li>
+              <li><Link href="/services/lead-gen-architecture/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Lead-Gen Architecture</Link></li>
+              <li><Link href="/industries/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Industries</Link></li>
+              <li><Link href="/industries/legal-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Legal SEO</Link></li>
+              <li><Link href="/industries/financial-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Financial SEO</Link></li>
+              <li><Link href="/industries/ecommerce-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>E-Commerce SEO</Link></li>
             </ul>
           </div>
 
@@ -90,6 +82,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'About Us',      href: '/about/' },
+                { label: 'Industries',     href: '/industries/' },
                 { label: 'Case Studies',  href: '/case-studies/' },
                 { label: 'Blog',          href: '/blog/' },
                 { label: 'Contact',       href: '/contact/' },

@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { services } from '@/data/services';
 
 export default function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -82,30 +81,24 @@ export default function Navigation() {
                     className="absolute top-full left-0 w-64 bg-white"
                     style={{ border: '2px solid #111110', borderTop: '3px solid var(--brand)' }}
                   >
-                    {services.map((service) => (
+                    {[
+                      { href: '/services/', label: 'All Services', desc: 'Full service overview' },
+                      { href: '/localseoagency/', label: 'Local SEO', desc: 'Dominate Google Maps and local pack' },
+                      { href: '/services/programmatic-seo/', label: 'Programmatic SEO', desc: 'Scale to hundreds of ranking pages' },
+                      { href: '/services/seo-audit/', label: 'SEO Audit', desc: 'Forensic technical audit in 48hrs' },
+                      { href: '/services/lead-gen-architecture/', label: 'Lead-Gen Architecture', desc: 'Build ranking lead-gen networks' },
+                      { href: '/industries/legal-seo/', label: 'Legal SEO', desc: 'Solicitors & law firms' },
+                      { href: '/industries/financial-seo/', label: 'Financial SEO', desc: 'Accountants, IFAs & fintech' },
+                      { href: '/industries/ecommerce-seo/', label: 'E-Commerce SEO', desc: 'Shopify, WooCommerce & DTC' },
+                    ].map((item) => (
                       <Link
-                        key={service.slug}
-                        href={`/${service.slug}/`}
-                        className="flex items-center gap-3 px-5 py-4 transition-colors hover:bg-[#f7f5f0]"
+                        key={item.href}
+                        href={item.href}
+                        className="flex flex-col px-5 py-3.5 transition-colors hover:bg-[#f7f5f0]"
                         style={{ borderBottom: '1px solid #e0d8cc' }}
                       >
-                        <span className="text-xl">{service.icon}</span>
-                        <div>
-                          <div
-                            style={{
-                              fontFamily: 'var(--font-condensed)',
-                              fontWeight: 700,
-                              fontSize: 14,
-                              letterSpacing: '0.08em',
-                              textTransform: 'uppercase',
-                            }}
-                          >
-                            {service.name}
-                          </div>
-                          <div className="text-xs mt-0.5" style={{ color: 'var(--mid)' }}>
-                            {service.shortDesc.slice(0, 42)}…
-                          </div>
-                        </div>
+                        <span className="v1-label" style={{ fontSize: 12, color: '#111110', letterSpacing: '0.1em' }}>{item.label}</span>
+                        <span className="v1-body" style={{ fontSize: 11, color: '#888', marginTop: 2 }}>{item.desc}</span>
                       </Link>
                     ))}
                   </motion.div>
@@ -195,10 +188,10 @@ export default function Navigation() {
                 </button>
               </div>
               <div className="px-6 py-4">
-                {services.map((service) => (
+                {[{ href: '/localseoagency/', label: 'Local SEO' }].map((item) => (
                   <Link
                     key={service.slug}
-                    href={`/${service.slug}/`}
+                    href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block py-4 transition-colors"
                     style={{
@@ -207,17 +200,17 @@ export default function Navigation() {
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
                       fontSize: 14,
-                      borderBottom: '1px solid var(--rule)',
-                      color: 'var(--ink)',
+                      borderBottom: '1px solid #dddddd',
+                      color: '#111110',
                     }}
                   >
-                    {service.name}
+                    {item.label}
                   </Link>
                 ))}
-                {['Case Studies', 'Blog', 'About', 'Contact'].map((label) => (
+                {['Industries', 'Case Studies', 'Blog', 'About', 'Contact'].map((label) => (
                   <Link
                     key={label}
-                    href={label === 'Case Studies' ? '/case-studies/' : `/${label.toLowerCase()}/`}
+                    href={label === 'Case Studies' ? '/case-studies/' : label === 'Industries' ? '/industries/' : `/${label.toLowerCase()}/`}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block py-4 transition-colors hover:text-brand"
                     style={{

@@ -22,6 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/industries/ecommerce-seo/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
   ];
 
+
+  const servicePages: MetadataRoute.Sitemap = [
+    { url: `${base}/services/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${base}/services/programmatic-seo/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${base}/services/seo-audit/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${base}/services/technical-seo/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
+    { url: `${base}/services/lead-gen-architecture/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
+  ];
   // Single location structure: /localseoagency/{slug}/
   const locationPages: MetadataRoute.Sitemap = [
     { url: `${base}/localseoagency/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
@@ -47,5 +55,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...industryPages, ...locationPages, ...blogPages, ...caseStudyPages];
+  return [...staticPages, ...servicePages, ...industryPages, ...locationPages, ...blogPages, ...caseStudyPages];
 }
