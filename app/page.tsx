@@ -115,10 +115,8 @@ export default function HomePage() {
                     <li key={location.slug}>
                       <Link
                         href={`/${service.slug}/${location.slug}/`}
-                        className="text-sm transition-colors block py-0.5"
+                        className="text-sm transition-colors block py-0.5 hover:text-brand"
                         style={{ color: 'var(--mid)', fontFamily: 'var(--font-body)' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--mid)')}
                       >
                         {location.name}
                       </Link>
