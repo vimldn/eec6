@@ -1,7 +1,7 @@
 import { locations } from '@/data/locations';
 
 export default function Schema() {
-  const siteUrl = 'https://extraedgeclub.com';
+  const siteUrl = 'https://www.extraedgeclub.com';
 
   const organizationSchema = {
     '@context': 'https://schema.org',

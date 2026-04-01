@@ -7,7 +7,8 @@ import Schema from '@/components/Schema';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://extraedgeclub.com'),
+  // www is the canonical origin — every relative URL and og:url resolves against this
+  metadataBase: new URL('https://www.extraedgeclub.com'),
   applicationName: 'Extra Edge Club',
   title: {
     default: 'Extra Edge Club | SEO Agency UK | Since 2011',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   keywords: ['SEO agency UK', 'local SEO', 'digital marketing', 'search engine optimisation'],
   authors: [{ name: 'Extra Edge Club Ltd' }],
   alternates: {
-    canonical: 'https://extraedgeclub.com',
+    canonical: 'https://www.extraedgeclub.com',
   },
   icons: {
     icon: '/favicon.png',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://extraedgeclub.com',
+    url: 'https://www.extraedgeclub.com',
     siteName: 'Extra Edge Club',
     images: ['/logo.png'],
   },

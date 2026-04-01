@@ -16,7 +16,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-3">
             <div className="w-9 h-9 flex items-center justify-center">
               <img 
-                src="/favicon.png" 
+                src="/logo.png" 
                 alt="Extra Edge Club" 
                 className="w-full h-full object-contain"
               />

@@ -4,7 +4,7 @@ import { services } from '@/data/services';
 import { getAllBlogPosts } from '@/data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://extraedgeclub.com';
+  const baseUrl = 'https://www.extraedgeclub.com';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
