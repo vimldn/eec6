@@ -62,7 +62,7 @@ export default function Navigation() {
                   color: servicesOpen ? '#111110' : '#888',
                 }}
               >
-                Services
+                Services & Industries
                 <svg
                   className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -78,32 +78,47 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 w-64 bg-white"
+                    className="absolute top-full left-0 bg-white" style={{ width: 480 }}
                     style={{ border: '2px solid #111110', borderTop: '3px solid var(--brand)' }}
                   >
-                    {[
-                      { href: '/services/', label: 'All Services', desc: 'Full service overview' },
-                      { href: '/localseoagency/', label: 'Local SEO', desc: 'Dominate Google Maps and local pack' },
-                      { href: '/services/programmatic-seo/', label: 'Programmatic SEO', desc: 'Scale to hundreds of ranking pages' },
-                      { href: '/services/seo-audit/', label: 'SEO Audit', desc: 'Forensic technical audit in 48hrs' },
-                      { href: '/services/lead-gen-architecture/', label: 'Lead-Gen Architecture', desc: 'Build ranking lead-gen networks' },
-                      { href: '/industries/', label: 'All Industries', desc: 'SEO by business type' },
-                      { href: '/industries/legal-seo/', label: 'Legal SEO', desc: 'Solicitors & law firms' },
-                      { href: '/industries/dental-seo/', label: 'Dental SEO', desc: 'Practices & Invisalign providers' },
-                      { href: '/industries/accountancy-seo/', label: 'Accountancy SEO', desc: 'Accountants & tax advisors' },
-                      { href: '/industries/financial-seo/', label: 'Financial SEO', desc: 'Accountants, IFAs & fintech' },
-                      { href: '/industries/ecommerce-seo/', label: 'E-Commerce SEO', desc: 'Shopify, WooCommerce & DTC' },
-                    ].map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex flex-col px-5 py-3.5 transition-colors hover:bg-[#f7f5f0]"
-                        style={{ borderBottom: '1px solid #e0d8cc' }}
-                      >
-                        <span className="v1-label" style={{ fontSize: 12, color: '#111110', letterSpacing: '0.1em' }}>{item.label}</span>
-                        <span className="v1-body" style={{ fontSize: 11, color: '#888', marginTop: 2 }}>{item.desc}</span>
-                      </Link>
-                    ))}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                      {/* Services column */}
+                      <div style={{ borderRight: '1px solid #e0d8cc' }}>
+                        <div className="v1-label px-5 pt-3 pb-2" style={{ fontSize: 9, color: '#aaa', letterSpacing: '0.2em' }}>Services</div>
+                        {[
+                          { href: '/localseoagency/', label: 'Local SEO', desc: 'Google Maps & local pack' },
+                          { href: '/services/programmatic-seo/', label: 'Programmatic SEO', desc: 'Scale to 100s of pages' },
+                          { href: '/services/seo-audit/', label: 'SEO Audit', desc: '48hr technical deep-dive' },
+                          { href: '/services/technical-seo/', label: 'Technical SEO', desc: 'Core Web Vitals & schema' },
+                          { href: '/services/lead-gen-architecture/', label: 'Lead-Gen Architecture', desc: 'Build ranking networks' },
+                        ].map((item) => (
+                          <Link key={item.href} href={item.href}
+                            className="flex flex-col px-5 py-2.5 transition-colors hover:bg-[#f7f5f0]"
+                            style={{ borderTop: '1px solid #f0ebe3' }}>
+                            <span className="v1-label" style={{ fontSize: 11, color: '#111110', letterSpacing: '0.08em' }}>{item.label}</span>
+                            <span className="v1-body" style={{ fontSize: 10, color: '#999', marginTop: 1 }}>{item.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
+                      {/* Industries column */}
+                      <div>
+                        <div className="v1-label px-5 pt-3 pb-2" style={{ fontSize: 9, color: '#aaa', letterSpacing: '0.2em' }}>Industries</div>
+                        {[
+                          { href: '/industries/legal-seo/', label: 'Legal SEO', desc: 'Solicitors & law firms' },
+                          { href: '/industries/dental-seo/', label: 'Dental SEO', desc: 'Practices & Invisalign' },
+                          { href: '/industries/accountancy-seo/', label: 'Accountancy SEO', desc: 'Accountants & advisors' },
+                          { href: '/industries/financial-seo/', label: 'Financial SEO', desc: 'IFAs & fintech' },
+                          { href: '/industries/ecommerce-seo/', label: 'E-Commerce SEO', desc: 'Shopify & WooCommerce' },
+                        ].map((item) => (
+                          <Link key={item.href} href={item.href}
+                            className="flex flex-col px-5 py-2.5 transition-colors hover:bg-[#f7f5f0]"
+                            style={{ borderTop: '1px solid #f0ebe3' }}>
+                            <span className="v1-label" style={{ fontSize: 11, color: '#111110', letterSpacing: '0.08em' }}>{item.label}</span>
+                            <span className="v1-body" style={{ fontSize: 10, color: '#999', marginTop: 1 }}>{item.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

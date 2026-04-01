@@ -61,14 +61,8 @@ export default function Footer() {
               <li><Link href="/services/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>All Services</Link></li>
               <li><Link href="/localseoagency/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Local SEO</Link></li>
               <li><Link href="/services/programmatic-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Programmatic SEO</Link></li>
-              <li><Link href="/services/seo-audit/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>SEO Audits</Link></li>
+              <li><Link href="/services/seo-audit/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>SEO Audit</Link></li>
               <li><Link href="/services/lead-gen-architecture/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Lead-Gen Architecture</Link></li>
-              <li><Link href="/industries/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Industries</Link></li>
-              <li><Link href="/industries/legal-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Legal SEO</Link></li>
-              <li><Link href="/industries/dental-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Dental SEO</Link></li>
-              <li><Link href="/industries/accountancy-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Accountancy SEO</Link></li>
-              <li><Link href="/industries/financial-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>Financial SEO</Link></li>
-              <li><Link href="/industries/ecommerce-seo/" className="v1-body text-sm transition-colors hover:text-brand" style={{ color: '#666' }}>E-Commerce SEO</Link></li>
             </ul>
           </div>
 
