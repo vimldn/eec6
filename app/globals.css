@@ -272,3 +272,13 @@ p, li, td, label, input, textarea, select, span {
 
 /* ── Location page hero text stays white (on dark image overlay) ── */
 .location-hero-text { color: #fff !important; }
+
+/* ── Outline text — reliable cross-browser stroke treatment ────
+   paint-order ensures stroke renders BEHIND fill so it doesn't
+   bleed inward. Defined as a class so it applies from the
+   stylesheet before JS hydrates, works on mobile Safari. ────── */
+.text-outline {
+  -webkit-text-stroke: 2px #111110;   /* hardcoded — no CSS var in webkit-text-stroke on mobile */
+  color: transparent;
+  paint-order: stroke fill;
+}
