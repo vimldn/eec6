@@ -16,7 +16,7 @@ export default function BlogPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">Blog</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
             SEO insights for <span className="text-brand">UK businesses</span>
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -35,7 +35,7 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}/`}
-                  className="bg-dark-card border border-white/[0.08] rounded-xl overflow-hidden hover:border-brand/30 transition-all group block"
+                  className="bg-dark-card border border-white/[0.08]  overflow-hidden hover:border-brand/30 transition-all group block"
                 >
                   {/* Category pill */}
                   <div className="px-6 pt-6">

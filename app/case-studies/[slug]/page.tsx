@@ -51,7 +51,7 @@ export default function CaseStudyPage({ params }: PageProps) {
             <span className={`text-xs uppercase tracking-wider px-3 py-1 rounded-full font-medium ${
               study.type === 'National Brand'
                 ? 'bg-brand/20 text-brand'
-                : 'bg-white/10 text-text-secondary'
+                : 'bg-ink/10 text-text-secondary'
             }`}>
               {study.type}
             </span>
@@ -60,7 +60,7 @@ export default function CaseStudyPage({ params }: PageProps) {
             <span className="text-xs text-text-secondary">{study.location}</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
             {study.client}
           </h1>
 
@@ -70,13 +70,13 @@ export default function CaseStudyPage({ params }: PageProps) {
 
           <div className="flex flex-wrap gap-2 mb-10">
             {study.services.map((s) => (
-              <span key={s} className="text-sm bg-white/5 border border-white/[0.08] px-3 py-1 rounded-full">
+              <span key={s} className="text-sm bg-ink/5 border border-white/[0.08] px-3 py-1 rounded-full">
                 {s}
               </span>
             ))}
           </div>
 
-          <div className="bg-dark-card border border-brand/30 rounded-2xl p-8 inline-block">
+          <div className="bg-dark-card border border-brand/30  p-8 inline-block">
             <div className="text-5xl md:text-6xl font-bold gradient-text mb-2">
               {study.heroStat.value}
             </div>
@@ -92,7 +92,7 @@ export default function CaseStudyPage({ params }: PageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {study.results.map((result, i) => (
               <div key={i} className="text-center">
-                <div className="text-3xl font-bold text-brand mb-1">{result.value}</div>
+                <div className="text-3xl font-bold text-brand mb-1 font-display">{result.value}</div>
                 <div className="text-sm text-text-secondary">{result.label}</div>
               </div>
             ))}
@@ -104,7 +104,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">The Challenge</p>
-          <h2 className="text-3xl font-bold mb-6 tracking-tight">What We Were Up Against</h2>
+          <h2 className="text-3xl font-bold mb-6 font-display">What We Were Up Against</h2>
           <p className="text-text-muted leading-relaxed text-lg">{study.challenge}</p>
         </div>
       </section>
@@ -113,11 +113,11 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16 bg-dark-lighter">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">Strategy</p>
-          <h2 className="text-3xl font-bold mb-10 tracking-tight">How We Approached It</h2>
+          <h2 className="text-3xl font-bold mb-10 font-display">How We Approached It</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {study.strategy.map((step, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-2xl p-6">
-                <div className="w-8 h-8 bg-brand/15 text-brand rounded-lg flex items-center justify-center text-sm font-bold mb-4">
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-6">
+                <div className="w-8 h-8 bg-brand/15 text-brand  flex items-center justify-center text-sm font-bold mb-4">
                   {i + 1}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{step.title}</h3>
@@ -132,7 +132,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-4">Outcome</p>
-          <h2 className="text-3xl font-bold mb-6 tracking-tight">The Results</h2>
+          <h2 className="text-3xl font-bold mb-6 font-display">The Results</h2>
           <p className="text-text-muted leading-relaxed text-lg mb-10">{study.outcome}</p>
 
           {study.quote && (
@@ -164,7 +164,7 @@ export default function CaseStudyPage({ params }: PageProps) {
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}/`}
-                  className="bg-dark-card border border-white/[0.08] rounded-2xl p-6 hover:border-brand/30 transition-colors block"
+                  className="bg-dark-card border border-white/[0.08]  p-6 hover:border-brand/30 transition-colors block"
                 >
                   <span className="text-xs text-text-secondary mb-2 block">{cs.industry}</span>
                   <div className="font-semibold mb-1">{cs.client}</div>

@@ -14,7 +14,7 @@ export default function CaseStudiesPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">Case Studies</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
             Real results from <span className="text-brand">real clients</span>
           </h1>
           <p className="text-xl text-text-secondary">
@@ -29,13 +29,13 @@ export default function CaseStudiesPage() {
             <Link
               key={study.slug}
               href={`/case-studies/${study.slug}/`}
-              className="bg-dark-card border border-white/[0.08] rounded-2xl p-8 hover:border-brand/30 transition-all group block"
+              className="bg-dark-card border border-white/[0.08]  p-8 hover:border-brand/30 transition-all group block"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className={`text-xs uppercase tracking-wider px-3 py-1 rounded-full font-medium ${
                   study.type === 'National Brand'
                     ? 'bg-brand/20 text-brand'
-                    : 'bg-white/10 text-text-secondary'
+                    : 'bg-ink/10 text-text-secondary'
                 }`}>
                   {study.type}
                 </span>
@@ -51,14 +51,14 @@ export default function CaseStudiesPage() {
 
               {/* Hero stat */}
               <div className="mb-6">
-                <span className="text-3xl font-bold gradient-text">{study.heroStat.value}</span>
+                <span className="text-3xl font-bold gradient-text font-display">{study.heroStat.value}</span>
                 <span className="text-text-secondary text-sm ml-2">{study.heroStat.label}</span>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2">
                   {study.services.map((s) => (
-                    <span key={s} className="text-xs bg-white/5 px-2 py-1 rounded-full">
+                    <span key={s} className="text-xs bg-ink/5 px-2 py-1 rounded-full">
                       {s}
                     </span>
                   ))}
@@ -74,7 +74,7 @@ export default function CaseStudiesPage() {
 
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">The Numbers That Matter</h2>
+          <h2 className="text-3xl font-bold mb-10 font-display">The Numbers That Matter</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '312%', label: 'Average traffic increase' },
@@ -83,7 +83,7 @@ export default function CaseStudiesPage() {
               { number: '14', label: 'Years experience' },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-4xl font-bold gradient-text mb-2">{stat.number}</div>
+                <div className="text-4xl font-bold gradient-text mb-2 font-display">{stat.number}</div>
                 <div className="text-sm text-text-secondary">{stat.label}</div>
               </div>
             ))}

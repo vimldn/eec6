@@ -15,7 +15,7 @@ export default function AboutPage() {
       <section className="px-6 py-20">
         <div className="max-w-4xl">
           <p className="section-label">About Us</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
             SEO specialists since <span className="text-brand">2011</span>
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold mb-6 font-display">Our Story</h2>
             <div className="text-text-muted space-y-4 leading-relaxed">
               <p>
                 We started Extra Edge Club in 2011 when SEO was still considered a dark art by most businesses. We saw an opportunity to bring transparency, ethics, and genuine results to an industry full of snake oil salesmen.
@@ -49,8 +49,8 @@ export default function AboutPage() {
               { number: '14', label: 'Years experience' },
               { number: '£4.2M', label: 'Revenue generated' }
             ].map((stat, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold text-brand mb-1">{stat.number}</div>
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-6 text-center">
+                <div className="text-3xl font-bold text-brand mb-1 font-display">{stat.number}</div>
                 <div className="text-sm text-text-secondary">{stat.label}</div>
               </div>
             ))}
@@ -61,7 +61,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center">How We Work</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center font-display">How We Work</h2>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 desc: 'We don\'t do quick fixes that risk your site. Our strategies are built for sustainable, compounding growth.' 
               }
             ].map((value, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-8">
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-8">
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-text-secondary">{value.desc}</p>
               </div>
@@ -90,14 +90,14 @@ export default function AboutPage() {
       {/* Clients */}
       <section className="px-6 py-20 bg-dark-lighter">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center">Clients We've Worked With</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center font-display">Clients We've Worked With</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clients.map((client, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-semibold">{client.name}</h3>
-                  <span className={`text-xs uppercase tracking-wider px-2 py-1 rounded ${client.type === 'national' ? 'bg-brand/20 text-brand' : 'bg-white/10 text-text-secondary'}`}>
+                  <span className={`text-xs uppercase tracking-wider px-2 py-1 rounded ${client.type === 'national' ? 'bg-brand/20 text-brand' : 'bg-ink/10 text-text-secondary'}`}>
                     {client.type}
                   </span>
                 </div>

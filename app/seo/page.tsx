@@ -19,7 +19,7 @@ export default function SEOAgencyPage() {
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="section-label">SEO Agency</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
               SEO Services Across <span className="text-brand">London</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mb-8">
@@ -27,7 +27,7 @@ export default function SEOAgencyPage() {
             </p>
             <Link
               href="/contact/"
-              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-all"
+              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3.5  font-semibold transition-all"
             >
               Get Your Free SEO Audit
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +43,7 @@ export default function SEOAgencyPage() {
       <section className="px-6 py-16 bg-dark-lighter">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">What is SEO?</h2>
+            <h2 className="text-3xl font-bold mb-6 font-display">What is SEO?</h2>
             <div className="space-y-4 text-text-muted">
               <p>
                 Search Engine Optimisation (SEO) is the practice of improving your website to increase its visibility in search engines like Google. When potential customers search for products or services you offer, SEO determines whether they find you or your competitors.
@@ -63,7 +63,7 @@ export default function SEOAgencyPage() {
               { number: '53%', label: 'of website traffic comes from organic search' },
               { number: '14.6%', label: 'close rate for SEO leads (vs 1.7% outbound)' }
             ].map((stat, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-5 text-center">
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-5 text-center">
                 <div className="text-2xl font-bold text-brand mb-1">{stat.number}</div>
                 <div className="text-xs text-text-secondary">{stat.label}</div>
               </div>
@@ -77,7 +77,7 @@ export default function SEOAgencyPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-label">Our Coverage</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold font-display">
               SEO Services by Area
             </h2>
             <p className="text-text-secondary mt-4 max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ export default function SEOAgencyPage() {
               <Link
                 key={location.slug}
                 href={`/seo/${location.slug}/`}
-                className="group relative overflow-hidden rounded-2xl bg-dark-card border border-white/[0.08] hover:border-brand transition-all duration-300"
+                className="group relative overflow-hidden  bg-dark-card border border-white/[0.08] hover:border-brand transition-all duration-300"
               >
                 <div className="aspect-[16/10] relative">
                   <img
@@ -128,7 +128,7 @@ export default function SEOAgencyPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-label">What's Included</p>
-            <h2 className="text-3xl font-bold">Our SEO Services</h2>
+            <h2 className="text-3xl font-bold font-display">Our SEO Services</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -158,8 +158,8 @@ export default function SEOAgencyPage() {
                 desc: 'Transparent reporting on rankings, traffic, conversions, and return on investment.'
               }
             ].map((service, i) => (
-              <div key={i} className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
-                <div className="w-10 h-10 bg-brand/20 rounded-lg flex items-center justify-center mb-4">
+              <div key={i} className="bg-dark-card border border-white/[0.08]  p-6">
+                <div className="w-10 h-10 bg-brand/20  flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>

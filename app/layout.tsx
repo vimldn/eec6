@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Bebas_Neue, Barlow_Condensed, Barlow } from 'next/font/google';
 import Script from 'next/script';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -6,8 +7,33 @@ import BackToTop from '@/components/BackToTop';
 import Schema from '@/components/Schema';
 import './globals.css';
 
+// ── Fonts loaded via next/font — self-hosted, preloaded, zero FOUT ──
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  preload: true,
+});
+
+const barlowCondensed = Barlow_Condensed({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  variable: '--font-condensed',
+  display: 'swap',
+  preload: true,
+});
+
+const barlow = Barlow({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+  preload: true,
+});
+
 export const metadata: Metadata = {
-  // www is the canonical origin — every relative URL and og:url resolves against this
+  // www is the canonical origin
   metadataBase: new URL('https://www.extraedgeclub.com'),
   applicationName: 'Extra Edge Club',
   title: {
@@ -18,9 +44,7 @@ export const metadata: Metadata = {
     "UK SEO specialists since 2011. We help businesses grow through Local SEO and comprehensive SEO services. Trusted by Sixes Cricket, The Gentleman's Journal, and more.",
   keywords: ['SEO agency UK', 'local SEO', 'digital marketing', 'search engine optimisation'],
   authors: [{ name: 'Extra Edge Club Ltd' }],
-  alternates: {
-    canonical: 'https://www.extraedgeclub.com',
-  },
+  alternates: { canonical: 'https://www.extraedgeclub.com' },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -33,9 +57,7 @@ export const metadata: Metadata = {
     siteName: 'Extra Edge Club',
     images: ['/logo.png'],
   },
-  verification: {
-    google: 'JUJUgKhz4l3wDbUsS5QQmRbhymeh_h5dIKMwmlsLGBQ',
-  },
+  verification: { google: 'JUJUgKhz4l3wDbUsS5QQmRbhymeh_h5dIKMwmlsLGBQ' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -56,7 +78,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className="bg-dark text-white antialiased">
+      <body
+        className={`
+          ${bebasNeue.variable}
+          ${barlowCondensed.variable}
+          ${barlow.variable}
+          bg-dark text-ink antialiased
+        `}
+      >
         <Navigation />
         <main>{children}</main>
         <Footer />

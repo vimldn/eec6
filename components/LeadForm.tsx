@@ -55,7 +55,7 @@ export default function LeadForm({
     // ✅ Grey shadow/glow goes HERE (outer wrapper)
     <div
       className="
-        rounded-2xl p-8
+         p-8
         bg-[#141824]/95 backdrop-blur-md
         border border-white/15
         shadow-[0_30px_90px_rgba(0,0,0,0.65),0_0_0_1px_rgba(255,255,255,0.06),0_0_55px_rgba(255,255,255,0.14)]
@@ -74,7 +74,7 @@ export default function LeadForm({
               id="name"
               name="name"
               required
-              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="Your name"
             />
           </div>
@@ -88,7 +88,7 @@ export default function LeadForm({
               id="email"
               name="email"
               required
-              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="your@email.com"
             />
           </div>
@@ -103,7 +103,7 @@ export default function LeadForm({
               type="tel"
               id="phone"
               name="phone"
-              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="Your phone number"
             />
           </div>
@@ -117,7 +117,7 @@ export default function LeadForm({
               id="website"
               name="website"
               required
-              className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
+              className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors"
               placeholder="https://yourwebsite.com"
             />
           </div>
@@ -130,7 +130,7 @@ export default function LeadForm({
           <select
             id="service"
             name="service"
-            className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+            className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
           >
             <option value="">Select a service</option>
             <option value="local-seo">Local SEO</option>
@@ -147,7 +147,7 @@ export default function LeadForm({
             id="message"
             name="message"
             rows={4}
-            className="w-full bg-[#0b0f19] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors resize-none"
+            className="w-full bg-[#0b0f19] border border-white/10  px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors resize-none"
             placeholder="What are you looking to achieve with SEO?"
           />
         </div>
@@ -155,7 +155,7 @@ export default function LeadForm({
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-brand hover:bg-brand-dark text-white py-4 rounded-lg font-semibold transition-colors disabled:opacity-60"
+          className="w-full bg-brand font-condensed uppercase tracking-wider hover:bg-brand-dark text-white py-4  font-semibold transition-colors disabled:opacity-60"
         >
           {status === 'loading' ? 'Sending...' : buttonText}
         </button>

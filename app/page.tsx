@@ -5,8 +5,8 @@ import { services } from '@/data/services';
 import { clients, featuredTestimonial } from '@/data/clients';
 import { locations } from '@/data/locations';
 
-// Client islands — interactivity isolated, everything else is SSR
 import HeroSection from '@/components/interactive/HeroSection';
+import Ticker from '@/components/interactive/Ticker';
 import ClientsSection from '@/components/interactive/ClientsSection';
 import SEOStatsCards from '@/components/interactive/SEOStatsCards';
 import ServicesGrid from '@/components/interactive/ServicesGrid';
@@ -22,58 +22,64 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* Hero — client island (3D canvas + Framer Motion entrance animations) */}
       <HeroSection />
-
-      {/* Clients — client island (stagger animation) */}
+      <Ticker />
       <ClientsSection clients={clients} />
 
-      {/* Why SEO Matters
-          Text content is server-rendered so Google reads it on first byte.
-          Stat cards are a client island for the counter animation. */}
-      <section className="px-6 py-20 bg-dark-lighter">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div>
+      {/* Why SEO Matters */}
+      <section style={{ borderBottom: '3px solid var(--ink)' }}>
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-0">
+          {/* Text — server-rendered, Google reads on first byte */}
+          <div
+            className="px-14 py-20"
+            style={{ borderRight: '2px solid var(--rule)' }}
+          >
             <p className="section-label">Why SEO Matters</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+            <h2
+              className="leading-[0.95] tracking-[0.02em] mb-8"
+              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 60px)', color: 'var(--ink)' }}
+            >
               The most cost-effective way to grow your business
             </h2>
-            <div className="space-y-5 text-text-muted leading-relaxed">
+            <div className="space-y-5 leading-relaxed" style={{ color: 'var(--muted)', fontFamily: 'var(--font-body)', fontSize: 15 }}>
               <p>
                 Every day, millions of people search Google for products and services. Unlike paid
                 ads, where you pay for every click, SEO delivers compounding returns. The traffic you
-                earn today keeps coming tomorrow, next month, and next year — without ongoing ad
-                spend.
+                earn today keeps coming tomorrow, next month, and next year — without ongoing ad spend.
               </p>
               <p>
                 For local businesses, the stakes are even higher. When someone searches &ldquo;solicitor
                 near me&rdquo; or &ldquo;plumber in Manchester&rdquo;, they&apos;re not browsing —
                 they&apos;re ready to buy.{' '}
-                <span className="text-brand font-medium">
+                <strong style={{ color: 'var(--brand)', fontWeight: 600 }}>
                   46% of all Google searches have local intent
-                </span>
-                , and the businesses that show up in those top 3 map results capture the vast majority
-                of calls and enquiries.
+                </strong>
+                , and the businesses in those top 3 map results capture the vast majority of calls.
               </p>
               <p>
-                SEO isn&apos;t just about rankings. It&apos;s about being visible at the exact moment
-                your ideal customer is looking for what you offer. It&apos;s the difference between
-                chasing customers and having them come to you.
+                SEO isn&apos;t just about rankings. It&apos;s about being visible at the exact moment your
+                ideal customer is looking for what you offer — the difference between chasing customers
+                and having them come to you.
               </p>
             </div>
           </div>
 
-          {/* Animated stat cards — client island */}
-          <SEOStatsCards />
+          {/* Animated stat cards */}
+          <div className="flex flex-col justify-center">
+            <SEOStatsCards />
+          </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-14">
+      <section style={{ borderBottom: '3px solid var(--ink)', background: 'var(--dark)' }}>
+        <div className="max-w-6xl mx-auto px-14 py-20">
+          <div className="mb-12">
             <p className="section-label">Our Services</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            <h2
+              className="leading-[0.95]"
+              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(48px, 6vw, 72px)', color: 'var(--ink)' }}
+            >
               Two ways we help you grow
             </h2>
           </div>
@@ -81,25 +87,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Location links — fully server-rendered static HTML.
-          Google reads every single location link on first crawl. */}
-      <section className="px-6 py-20 bg-dark-lighter">
-        <div className="max-w-6xl mx-auto">
+      {/* Stats — 4-column grid */}
+      <StatsGrid />
+
+      {/* Location links — 100% server-rendered, zero JS */}
+      <section style={{ borderBottom: '3px solid var(--ink)', background: '#fff' }}>
+        <div className="max-w-6xl mx-auto px-14 py-20">
           <p className="section-label">London Coverage</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-10 tracking-tight">
+          <h2
+            className="mb-12 leading-[0.95]"
+            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 60px)', color: 'var(--ink)' }}
+          >
             SEO services across London
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-16">
             {services.map((service) => (
               <div key={service.slug}>
-                <h3 className="text-lg font-semibold text-brand mb-4">{service.name}</h3>
-                <ul className="grid grid-cols-2 gap-2">
+                <h3
+                  className="mb-5 uppercase tracking-[0.1em]"
+                  style={{ fontFamily: 'var(--font-condensed)', fontSize: 14, fontWeight: 700, color: 'var(--brand)' }}
+                >
+                  {service.name}
+                </h3>
+                <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
                   {locations.map((location) => (
                     <li key={location.slug}>
                       <Link
                         href={`/${service.slug}/${location.slug}/`}
-                        className="text-text-secondary hover:text-white text-sm transition-colors hover:translate-x-1 inline-block"
+                        className="text-sm transition-colors block py-0.5"
+                        style={{ color: 'var(--mid)', fontFamily: 'var(--font-body)' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--mid)')}
                       >
                         {location.name}
                       </Link>
@@ -108,7 +127,8 @@ export default function HomePage() {
                 </ul>
                 <Link
                   href={`/${service.slug}/`}
-                  className="inline-block mt-4 text-brand text-sm font-medium hover:underline"
+                  className="inline-block mt-5 uppercase tracking-wider transition-colors"
+                  style={{ fontFamily: 'var(--font-condensed)', fontSize: 12, fontWeight: 700, color: 'var(--brand)' }}
                 >
                   View all areas →
                 </Link>
@@ -118,15 +138,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Big stats — client island.
-          Counters initialise to their final value so SSR HTML always
-          contains "14", "200", "4.2", "312" — never "0". */}
-      <StatsGrid />
-
-      {/* Testimonial — client island (hover animation only) */}
+      {/* Testimonial */}
       <TestimonialCard testimonial={featuredTestimonial} />
 
-      {/* CTA — pure server component, no JS needed */}
+      {/* CTA */}
       <CTASection />
     </>
   );

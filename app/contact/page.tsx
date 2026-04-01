@@ -53,7 +53,7 @@ export default function ContactPage() {
       <section className="px-6 py-10 pb-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
           {/* Form */}
-          <div className="bg-dark-card border border-white/[0.08] rounded-2xl p-8">
+          <div className="bg-dark-card border border-white/[0.08]  p-8">
             <h2 className="text-2xl font-bold mb-6">Get Your Free SEO Audit</h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
@@ -64,7 +64,7 @@ export default function ContactPage() {
                     id="name" 
                     name="name"
                     required
-                    className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+                    className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                     id="email" 
                     name="email"
                     required
-                    className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+                    className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     type="tel" 
                     id="phone" 
                     name="phone"
-                    className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+                    className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     id="website" 
                     name="website"
                     required
-                    className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
+                    className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors"
                     placeholder="https://yourwebsite.com"
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 <select 
                   id="service" 
                   name="service"
-                  className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+                  className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
                 >
                   <option value="">Select a service</option>
                   <option value="local-seo">Local SEO</option>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   id="message" 
                   name="message"
                   rows={4}
-                  className="w-full bg-dark border border-white/[0.08] rounded-lg px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors resize-none"
+                  className="w-full bg-dark border border-white/[0.08]  px-4 py-3 text-white placeholder:text-text-secondary focus:outline-none focus:border-brand transition-colors resize-none"
                   placeholder="What are you looking to achieve with SEO?"
                 />
               </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
               <button 
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-brand hover:bg-brand-dark text-white py-4 rounded-lg font-semibold transition-colors disabled:opacity-60"
+                className="w-full bg-brand hover:bg-brand-dark text-white py-4  font-semibold transition-colors disabled:opacity-60"
               >
                 {status === 'loading' ? 'Sending...' : 'Request Free Audit'}
               </button>
@@ -174,25 +174,25 @@ export default function ContactPage() {
               </div>
             </div>
             
-            <div className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
+            <div className="bg-dark-card border border-white/[0.08]  p-6">
               <h3 className="font-bold mb-4">Contact Details</h3>
               <div className="space-y-3 text-text-secondary">
                 <p>
-                  <strong className="text-white">Email:</strong><br />
+                  <strong className="text-ink">Email:</strong><br />
                   hello@extraedgeclub.com
                 </p>
                 <p>
-                  <strong className="text-white">Company:</strong><br />
+                  <strong className="text-ink">Company:</strong><br />
                   Extra Edge Club Ltd
                 </p>
                 <p>
-                  <strong className="text-white">Established:</strong><br />
+                  <strong className="text-ink">Established:</strong><br />
                   2011
                 </p>
               </div>
             </div>
             
-            <div className="bg-dark-card border border-white/[0.08] rounded-xl p-6">
+            <div className="bg-dark-card border border-white/[0.08]  p-6">
               <h3 className="font-bold mb-3">Why choose us?</h3>
               <ul className="space-y-2">
                 {['14 years experience', 'No long contracts', 'Transparent reporting', 'Results-focused approach'].map((item) => (

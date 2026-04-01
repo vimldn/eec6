@@ -3,47 +3,32 @@
 import { motion } from 'framer-motion';
 
 interface Testimonial {
-  quote: string;
-  client: string;
-  industry: string;
-  location: string;
-  initials: string;
+  quote: string; client: string; industry: string; location: string; initials: string;
 }
 
-interface TestimonialCardProps {
-  testimonial: Testimonial;
-}
-
-export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
+export default function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <section className="px-6 py-20 bg-dark-lighter">
-      <div className="max-w-3xl mx-auto">
-        <p className="section-label">Client Success</p>
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
-          className="bg-dark-card border border-white/[0.08] rounded-2xl p-8 md:p-12"
+    <section style={{ background: 'var(--brand)', borderTop: '3px solid var(--ink)', borderBottom: '3px solid var(--ink)' }}>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-5xl mx-auto px-14 py-20"
+      >
+        <blockquote
+          className="leading-[1.05] mb-8 text-white"
+          style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)' }}
         >
-          <blockquote className="text-xl md:text-2xl leading-relaxed mb-8">
-            &ldquo;{testimonial.quote}&rdquo;
-          </blockquote>
-          <div className="flex items-center gap-4">
-            <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-              className="w-12 h-12 bg-gradient-to-br from-brand to-brand-light rounded-full flex items-center justify-center font-bold text-dark"
-            >
-              {testimonial.initials}
-            </motion.div>
-            <div>
-              <div className="font-semibold">{testimonial.client}</div>
-              <div className="text-sm text-text-secondary">
-                {testimonial.industry}, {testimonial.location}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+          &ldquo;{testimonial.quote}&rdquo;
+        </blockquote>
+        <div
+          className="uppercase tracking-[0.2em]"
+          style={{ fontFamily: 'var(--font-condensed)', fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.75)' }}
+        >
+          — {testimonial.client} · {testimonial.industry} · {testimonial.location}
+        </div>
+      </motion.div>
     </section>
   );
 }
