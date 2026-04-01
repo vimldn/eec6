@@ -1,53 +1,56 @@
-/* ── V1 Concrete Blog Content ────────────────────────────────
-   Background: #f7f5f0 cream. All colours from the V1 spec.   */
+/* ── V1 Concrete Blog Content ───────────────────────────────── */
 
 .blogContent {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body, 'Barlow', sans-serif);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
   color: #666666;
 }
 
-/* ── Headings — Bebas Neue ── */
+/* ── h2 — Bebas Neue, ALL CAPS, tight ── */
 .blogContent h2 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-display, 'Bebas Neue', sans-serif);
   font-weight: 400;
-  font-size: clamp(32px, 4vw, 48px);
-  letter-spacing: 0.03em;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   line-height: 0.95;
   color: #111110;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
   padding-top: 2rem;
   border-top: 2px solid #111110;
 }
 
+/* ── h3 — Bebas Neue, ALL CAPS, slightly smaller ── */
 .blogContent h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-display, 'Bebas Neue', sans-serif);
   font-weight: 400;
-  font-size: clamp(24px, 3vw, 36px);
-  letter-spacing: 0.03em;
-  line-height: 1;
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 0.95;
   color: #111110;
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
+/* ── h4 — Barlow Condensed 700, uppercase ── */
 .blogContent h4 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: var(--font-condensed, 'Barlow Condensed', sans-serif);
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.15em;
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #111110;
   margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-/* ── Body ── */
+/* ── Body — Barlow 400 ── */
 .blogContent p {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body, 'Barlow', sans-serif);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
@@ -70,7 +73,7 @@
 .blogContent a {
   color: #e85d26;
   text-decoration: underline;
-  text-decoration-color: rgba(232, 93, 38, 0.3);
+  text-decoration-color: rgba(232, 93, 38, 0.35);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s;
 }
@@ -85,6 +88,7 @@
   margin: 1.25rem 0 1.5rem 0;
   padding-left: 1.5rem;
   color: #666666;
+  font-family: var(--font-body, 'Barlow', sans-serif);
 }
 
 .blogContent ul { list-style-type: disc; }
@@ -119,7 +123,7 @@
 .blogContent th {
   padding: 10px 14px;
   text-align: left;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: var(--font-condensed, 'Barlow Condensed', sans-serif);
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.15em;
@@ -132,6 +136,7 @@
   border-bottom: 1px solid #ddd;
   color: #666666;
   vertical-align: top;
+  font-family: var(--font-body, 'Barlow', sans-serif);
 }
 
 .blogContent tr:last-child td {
@@ -168,7 +173,7 @@
   font-size: 13px;
 }
 
-/* ── Horizontal rule ── */
+/* ── HR ── */
 .blogContent hr {
   border: none;
   border-top: 2px solid #111110;
