@@ -67,7 +67,17 @@ export default function SeoLocationPage({ params }: PageProps) {
               <span style={{ fontSize: 7 }}>▶</span>
               SEO Agency
             </div>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(64px, 9vw, 112px)', color: '#fff', lineHeight: 0.9, letterSpacing: '0.02em' }}>
+            <div
+              className="v1-headline"
+              style={{
+                fontSize: 'clamp(64px, 9vw, 112px)',
+                lineHeight: 0.9,
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.45)',
+                WebkitTextStroke: '1.5px rgba(255,255,255,0.6)',
+              }}
+            >
               {location.name}
             </div>
           </div>
