@@ -31,8 +31,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2">
           {/* Text — server-rendered, Google reads on first byte */}
           <div
-            className="px-6 md:px-14 py-12 md:py-20"
-            className="lg:border-r lg:border-rule"
+            className="px-6 md:px-14 py-12 md:py-20 lg:border-r lg:border-rule"
           >
             <p className="section-label">Why SEO Matters</p>
             <h2
