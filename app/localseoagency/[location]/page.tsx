@@ -279,10 +279,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <LocationIndustryLinks locationName={location.name} />
+      </section> locationName={location.name} />
 
       {/* Other Locations */}
       <section style={{ background: "#f7f5f0", borderBottom: "3px solid #111110", padding: "clamp(40px,5vw,72px) clamp(24px,5vw,56px)" }}>

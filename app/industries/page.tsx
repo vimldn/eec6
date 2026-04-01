@@ -32,7 +32,7 @@ const industries = [
     label: 'Dentists · Invisalign Providers · Dental Groups',
     stat: '£850+',
     statLabel: 'avg. Invisalign treatment value',
-    desc: 'Healthcare content is held to Google's strictest YMYL standards. We build the E-E-A-T authority, treatment page architecture, and local pack dominance that dental practices need to win.',
+    desc: "Healthcare content is held to Google's strictest YMYL standards. We build the E-E-A-T authority, treatment page architecture, and local pack dominance that dental practices need to win.",
     caseStudy: { name: 'See our dental methodology', slug: 'dental-seo' },
   },
   {

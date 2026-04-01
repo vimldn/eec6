@@ -10,19 +10,19 @@ export const metadata: Metadata = {
 
 const services = [
   { n: '01', title: 'Treatment Page Architecture', desc: 'Individual, fully optimised pages for every treatment — Invisalign, implants, composite bonding, whitening. Not a single "treatments" page that ranks for nothing.' },
-  { n: '02', title: 'YMYL & E-E-A-T Compliance', desc: 'Dental content is held to Google\'s highest scrutiny. We build the authorship credentials, clinical references, and trust signals that pass the YMYL threshold.' },
+  { n: '02', title: 'YMYL & E-E-A-T Compliance', desc: "Dental content is held to Google's highest scrutiny. We build the authorship credentials, clinical references, and trust signals that pass the YMYL threshold." },
   { n: '03', title: 'Multi-Location GBP Management', desc: 'Google Business Profile optimisation and monitoring for every practice location — including the photo strategy, review velocity, and posting cadence that drives map pack rankings.' },
   { n: '04', title: 'Local Pack Domination', desc: 'Postcode-level proximity strategy, citation consistency, and NAP architecture designed around how patients actually search: "dentist near me", "Invisalign [area]".' },
   { n: '05', title: 'Review Generation Systems', desc: 'A systematic, CQC-compliant review acquisition strategy. Reviews are the single highest-impact local ranking factor for dental practices.' },
   { n: '06', title: 'Schema Markup for Dentists', desc: 'Dentist, MedicalOrganization, and LocalBusiness schema — correctly implemented server-side so Googlebot reads every tag and rich results appear in SERPs.' },
-  { n: '07', title: 'Competitor Gap Analysis', desc: 'We identify which treatments and locations your nearest competitors rank for that you don\'t — and build a prioritised plan to close those gaps.' },
+  { n: '07', title: 'Competitor Gap Analysis', desc: "We identify which treatments and locations your nearest competitors rank for that you don't — and build a prioritised plan to close those gaps systematically." },
   { n: '08', title: 'County & Multi-Area Lead Gen', desc: 'For Invisalign providers and specialist clinics: dedicated county-level landing pages that capture high-value searches across a wider catchment area.' },
 ];
 
 const faqs = [
   { q: 'How long does dental SEO take to show results?', a: 'Local pack results typically improve within 60–90 days of GBP optimisation and citation work. Organic ranking improvements for treatment pages take 4–6 months for established practices, longer for new sites. High-competition treatments like Invisalign and implants in London require 6–12 months of sustained effort.' },
-  { q: 'Is dental content subject to different Google rules?', a: 'Yes. Dental content falls under Google\'s YMYL (Your Money or Your Life) category — meaning it\'s evaluated at a higher standard for E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. Content must demonstrate clinical credibility through named GDC-registered practitioners, professional body citations, and accurate treatment information.' },
-  { q: 'Can you help practices with multiple locations?', a: 'Multi-location dental groups are where we specialise. Each location needs its own GBP, its own locally-optimised page, and its own citation profile — all without creating duplicate content issues across the group\'s site.' },
+  { q: "Is dental content subject to different Google rules?", a: "Yes. Dental content falls under Google's YMYL (Your Money or Your Life) category — meaning it's evaluated at a higher standard for E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. Content must demonstrate clinical credibility through named GDC-registered practitioners, professional body citations, and accurate treatment information." },
+  { q: "Can you help practices with multiple locations?", a: "Multi-location dental groups are where we specialise. Each location needs its own GBP, its own locally-optimised page, and its own citation profile — all without creating duplicate content issues across the group's site." },
   { q: 'Do you work with Invisalign Diamond and Platinum providers?', a: 'Yes. Invisalign searches are highly competitive and highly specific. We build county and area-level landing pages that capture "Invisalign [town]" searches across a wider geography than just the practice postcode.' },
 ];
 
