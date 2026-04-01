@@ -16,7 +16,6 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <div
                 className="v1-headline text-3xl" style={{ color: "#ffffff" }}
-                style={{ /* v1-headline via global h* rule */ }}
               >
                 Extra<span style={{ color: 'var(--brand)' }}>Edge</span> Club
               </div>
