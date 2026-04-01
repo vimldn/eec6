@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           {/* Title — Bebas Neue */}
-          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400, fontSize: 'clamp(48px, 7vw, 88px)', lineHeight: 0.92, letterSpacing: '0.02em', color: '#ffffff', marginBottom: 28 }}>
+          <h1 className="v1-headline" style={{ fontSize: 'clamp(48px, 7vw, 88px)', color: '#ffffff', marginBottom: 28, textTransform: 'uppercase' }}>
             {post.title}
           </h1>
 
@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#e85d26', marginBottom: 8 }}>
                   {r.category}
                 </div>
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: '0.02em', color: '#111110', lineHeight: 1.1, marginBottom: 8 }}>
+                <div className="v1-headline" style={{ fontSize: 22, color: '#111110', lineHeight: 1.1, marginBottom: 8, textTransform: 'uppercase' }}>
                   {r.title}
                 </div>
                 <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888' }}>
