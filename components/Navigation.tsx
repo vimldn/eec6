@@ -78,8 +78,8 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 bg-white" style={{ width: 480 }}
-                    style={{ border: '2px solid #111110', borderTop: '3px solid var(--brand)' }}
+                    className="absolute top-full left-0 bg-white"
+                    style={{ width: 480, border: '2px solid #111110', borderTop: '3px solid var(--brand)' }}
                   >
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                       {/* Services column */}
