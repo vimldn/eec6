@@ -27,6 +27,24 @@ const industries = [
     caseStudy: { name: 'Tidy Money', slug: 'tidy-money' },
   },
   {
+    slug: 'dental-seo',
+    name: 'Dental SEO',
+    label: 'Dentists · Invisalign Providers · Dental Groups',
+    stat: '£850+',
+    statLabel: 'avg. Invisalign treatment value',
+    desc: 'Healthcare content is held to Google's strictest YMYL standards. We build the E-E-A-T authority, treatment page architecture, and local pack dominance that dental practices need to win.',
+    caseStudy: { name: 'See our dental methodology', slug: 'dental-seo' },
+  },
+  {
+    slug: 'accountancy-seo',
+    name: 'Accountancy SEO',
+    label: 'Accountants · Tax Advisors · Bookkeepers',
+    stat: '36',
+    statLabel: 'London boroughs ranked across our accountancy network',
+    desc: 'Niche service pages, hyper-local borough targeting, and E-E-A-T authority for UK accounting firms. We rank for the specific client types — landlords, contractors, e-commerce — that convert at the highest rate.',
+    caseStudy: { name: 'Tidy Money', slug: 'tidy-money' },
+  },
+  {
     slug: 'ecommerce-seo',
     name: 'E-Commerce SEO',
     label: 'Shopify · WooCommerce · DTC Brands',
@@ -72,7 +90,7 @@ export default function IndustriesPage() {
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Link href={`/industries/${ind.slug}/`} className="btn-fill">See the approach →</Link>
-              <Link href={`/case-studies/${ind.caseStudy.slug}/`} className="btn-out">{ind.caseStudy.name} case study</Link>
+              <Link href={ind.slug === 'dental-seo' || ind.slug === 'accountancy-seo' ? `/industries/${ind.caseStudy.slug}/` : `/case-studies/${ind.caseStudy.slug}/`} className="btn-out">{ind.caseStudy.name} case study</Link>
             </div>
           </div>
           <div style={{ padding: 'clamp(40px,5vw,72px) clamp(24px,5vw,64px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/industries/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/industries/legal-seo/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/industries/financial-seo/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/industries/dental-seo/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
+    { url: `${base}/industries/accountancy-seo/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.85 },
     { url: `${base}/industries/ecommerce-seo/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
   ];
 

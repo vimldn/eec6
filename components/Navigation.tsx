@@ -87,7 +87,10 @@ export default function Navigation() {
                       { href: '/services/programmatic-seo/', label: 'Programmatic SEO', desc: 'Scale to hundreds of ranking pages' },
                       { href: '/services/seo-audit/', label: 'SEO Audit', desc: 'Forensic technical audit in 48hrs' },
                       { href: '/services/lead-gen-architecture/', label: 'Lead-Gen Architecture', desc: 'Build ranking lead-gen networks' },
+                      { href: '/industries/', label: 'All Industries', desc: 'SEO by business type' },
                       { href: '/industries/legal-seo/', label: 'Legal SEO', desc: 'Solicitors & law firms' },
+                      { href: '/industries/dental-seo/', label: 'Dental SEO', desc: 'Practices & Invisalign providers' },
+                      { href: '/industries/accountancy-seo/', label: 'Accountancy SEO', desc: 'Accountants & tax advisors' },
                       { href: '/industries/financial-seo/', label: 'Financial SEO', desc: 'Accountants, IFAs & fintech' },
                       { href: '/industries/ecommerce-seo/', label: 'E-Commerce SEO', desc: 'Shopify, WooCommerce & DTC' },
                     ].map((item) => (

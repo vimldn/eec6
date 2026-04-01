@@ -16,8 +16,8 @@ const industries = [
     statLabel: 'close rate vs cold leads',
   },
   {
-    href: '/industries/financial-seo/',
-    label: 'Financial & Accountancy SEO',
+    href: '/industries/accountancy-seo/',
+    label: 'Accountancy & Financial SEO',
     eyebrow: 'Accountants · IFAs · Fintech',
     desc: (loc: string) =>
       `Accountancy and financial services searches convert at a premium in ${loc}. We build E-E-A-T authority and local pack dominance for firms targeting everything from self-assessment to business tax planning.`,
@@ -36,7 +36,7 @@ const industries = [
     statLabel: 'product pages ranked page one',
   },
   {
-    href: '/industries/legal-seo/',
+    href: '/industries/dental-seo/',
     label: 'Healthcare & Dental SEO',
     eyebrow: 'Dentists · Clinics · Medical Practices',
     desc: (loc: string) =>
