@@ -28,11 +28,11 @@ export default function HomePage() {
 
       {/* Why SEO Matters */}
       <section style={{ borderBottom: '3px solid #111110' }}>
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-0">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2">
           {/* Text — server-rendered, Google reads on first byte */}
           <div
-            className="px-14 py-20"
-            style={{ borderRight: '1px solid #dddddd' }}
+            className="px-6 md:px-14 py-12 md:py-20"
+            className="lg:border-r lg:border-rule"
           >
             <p className="section-label">Why SEO Matters</p>
             <h2
@@ -72,7 +72,7 @@ export default function HomePage() {
 
       {/* Services */}
       <section style={{ borderBottom: '3px solid var(--ink)', background: '#f7f5f0' }}>
-        <div className="max-w-6xl mx-auto px-14 py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-14 py-12 md:py-20">
           <div className="mb-12">
             <p className="section-label">Our Services</p>
             <h2
@@ -90,7 +90,7 @@ export default function HomePage() {
 
       {/* Location links — 100% server-rendered, zero JS */}
       <section style={{ borderBottom: '3px solid var(--ink)', background: '#ffffff' }}>
-        <div className="max-w-6xl mx-auto px-14 py-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-14 py-12 md:py-20">
           <p className="section-label">London Coverage</p>
           <h2
             className="mb-12 leading-[0.95] v1-headline" style={{ fontSize: 'clamp(40px, 5vw, 60px)', color: '#111110' }}

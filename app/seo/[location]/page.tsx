@@ -61,7 +61,7 @@ export default function SeoLocationPage({ params }: PageProps) {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,10,0.55)' }} />
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 clamp(20px, 4vw, 48px)' }}>
           <div>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#e85d26', display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
               <span style={{ fontSize: 7 }}>▶</span>
@@ -79,8 +79,8 @@ export default function SeoLocationPage({ params }: PageProps) {
       </section>
 
       {/* ── Below banner ── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 420px', borderBottom: '3px solid #111110' }} id="lead-form">
-        <div style={{ background: '#f7f5f0', padding: '52px 52px', borderRight: '3px solid #111110' }}>
+      <section className="grid lg:grid-cols-[1fr_420px]" style={{ borderBottom: '3px solid #111110' }} id="lead-form">
+        <div className="lg:border-r-[3px] lg:border-ink" style={{ background: '#f7f5f0', padding: 'clamp(32px, 5vw, 52px) clamp(24px, 5vw, 52px)' }}>
           <h1 className="v1-headline" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110', marginBottom: 20 }}>
             SEO Agency in <span style={{ color: '#e85d26' }}>{location.name}</span>
           </h1>
@@ -96,7 +96,7 @@ export default function SeoLocationPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div style={{ background: '#ffffff', padding: '40px 36px' }}>
+        <div style={{ background: '#ffffff', padding: 'clamp(28px, 4vw, 40px) clamp(20px, 4vw, 36px)' }}>
           <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, letterSpacing: '0.03em', color: '#111110', marginBottom: 20, lineHeight: 1 }}>
             Free audit in <span style={{ color: '#e85d26' }}>{location.name}</span>
           </div>

@@ -19,7 +19,7 @@ export default function CTASection({
 
   return (
     <section
-      className="flex items-center justify-between flex-wrap gap-10 px-14 py-20"
+      className="flex flex-col md:flex-row md:items-center md:justify-between flex-wrap gap-8 px-6 md:px-14 py-12 md:py-20"
       style={{ borderTop: '3px solid #111110', borderBottom: '3px solid #111110', background: '#ffffff' }}
     >
       <div>

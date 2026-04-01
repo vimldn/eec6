@@ -7,7 +7,7 @@ export default function ClientsSection({ clients }: { clients: Client[] }) {
   return (
     // Client strip — white background per spec
     <div
-      className="flex items-center px-10 py-6 flex-wrap gap-y-3"
+      className="flex items-center px-6 md:px-10 py-5 flex-wrap gap-y-3"
       style={{ background: '#ffffff', borderBottom: '3px solid #111110' }}
     >
       {/* Label — Barlow Condensed 700 */}

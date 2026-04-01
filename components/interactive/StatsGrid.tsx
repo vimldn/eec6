@@ -54,7 +54,7 @@ export default function StatsGrid() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="px-10 py-16 text-center"
             style={{
-              borderRight: i < stats.length - 1 ? '1px solid #dddddd' : 'none',
+              borderRight: i % 2 === 0 && i < stats.length - 1 ? '1px solid #dddddd' : 'none',
               background: i % 2 === 0 ? '#ffffff' : '#f7f5f0',
             }}
           >

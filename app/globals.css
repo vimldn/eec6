@@ -299,3 +299,70 @@ p, li, td, blockquote {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — base is desktop, scale down gracefully
+   ══════════════════════════════════════════════════════════════ */
+
+/* CTASection — stack on mobile */
+@media (max-width: 767px) {
+  section[style*="justify-between"][style*="flex-wrap"] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* StatsGrid — 2-col on mobile */
+  .grid.grid-cols-2.md\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Nav — tighten padding */
+  nav .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ticker text — smaller on mobile */
+  .ticker-track .v1-headline {
+    font-size: 14px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Clients section — smaller gaps */
+  .flex.items-center.px-10 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    gap: 8px !important;
+  }
+
+  /* Location hero banner — shorter on mobile */
+  section[style*="height: 240"] {
+    height: 180px !important;
+  }
+}
+
+/* Location page below-banner grid — use Tailwind's lg: breakpoint */
+.lg\:grid-cols-\[1fr_420px\] {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-\[1fr_420px\] {
+    grid-template-columns: 1fr 420px;
+  }
+  .lg\:border-r-\[3px\] {
+    border-right-width: 3px;
+    border-right-style: solid;
+  }
+  .lg\:border-ink {
+    border-right-color: #111110;
+  }
+}
+
+/* General section padding — tighter on mobile */
+@media (max-width: 639px) {
+  .px-14 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .py-20 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .py-16 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  .px-10 { padding-left: 1rem !important; padding-right: 1rem !important; }
+}

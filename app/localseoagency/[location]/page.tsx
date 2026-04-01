@@ -54,7 +54,7 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,10,0.55)' }} />
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 clamp(20px, 4vw, 48px)' }}>
           {/* Location name in huge Bebas Neue */}
           <div>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#e85d26', display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
@@ -74,9 +74,9 @@ export default function LocalSEOLocationPage({ params }: PageProps) {
       </section>
 
       {/* ── Below banner: content left + compact form right ── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 420px', borderBottom: '3px solid #111110' }} id="lead-form">
+      <section className="grid lg:grid-cols-[1fr_420px]" style={{ borderBottom: '3px solid #111110' }} id="lead-form">
         {/* Left — headline, body, CTAs */}
-        <div style={{ background: '#f7f5f0', padding: '52px 52px', borderRight: '3px solid #111110' }}>
+        <div className="lg:border-r-[3px] lg:border-ink" style={{ background: '#f7f5f0', padding: 'clamp(32px, 5vw, 52px) clamp(24px, 5vw, 52px)' }}>
           <h1 className="v1-headline" style={{ fontSize: 'clamp(48px, 6vw, 72px)', color: '#111110', marginBottom: 20 }}>
             Local SEO Agency in{' '}
             <span style={{ color: '#e85d26' }}>{location.name}</span>
