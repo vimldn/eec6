@@ -1,0 +1,370 @@
+{
+  "redirects": [
+    {
+      "source": "/localseoagency/",
+      "destination": "/seo/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/london/",
+      "destination": "/seo/london/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/london",
+      "destination": "/seo/london/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/camden/",
+      "destination": "/seo/camden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/camden",
+      "destination": "/seo/camden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/westminster/",
+      "destination": "/seo/westminster/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/westminster",
+      "destination": "/seo/westminster/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/hackney/",
+      "destination": "/seo/hackney/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/hackney",
+      "destination": "/seo/hackney/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/islington/",
+      "destination": "/seo/islington/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/islington",
+      "destination": "/seo/islington/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/shoreditch/",
+      "destination": "/seo/shoreditch/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/shoreditch",
+      "destination": "/seo/shoreditch/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kensington/",
+      "destination": "/seo/kensington/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kensington",
+      "destination": "/seo/kensington/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/chelsea/",
+      "destination": "/seo/chelsea/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/chelsea",
+      "destination": "/seo/chelsea/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/canary-wharf/",
+      "destination": "/seo/canary-wharf/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/canary-wharf",
+      "destination": "/seo/canary-wharf/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/brixton/",
+      "destination": "/seo/brixton/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/brixton",
+      "destination": "/seo/brixton/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/fulham/",
+      "destination": "/seo/fulham/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/fulham",
+      "destination": "/seo/fulham/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/wembley/",
+      "destination": "/seo/wembley/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/wembley",
+      "destination": "/seo/wembley/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/harrow/",
+      "destination": "/seo/harrow/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/harrow",
+      "destination": "/seo/harrow/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/brent/",
+      "destination": "/seo/brent/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/brent",
+      "destination": "/seo/brent/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kenton/",
+      "destination": "/seo/kenton/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kenton",
+      "destination": "/seo/kenton/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kingsbury/",
+      "destination": "/seo/kingsbury/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kingsbury",
+      "destination": "/seo/kingsbury/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/neasden/",
+      "destination": "/seo/neasden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/neasden",
+      "destination": "/seo/neasden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/willesden/",
+      "destination": "/seo/willesden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/willesden",
+      "destination": "/seo/willesden/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kilburn/",
+      "destination": "/seo/kilburn/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/kilburn",
+      "destination": "/seo/kilburn/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/cricklewood/",
+      "destination": "/seo/cricklewood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/cricklewood",
+      "destination": "/seo/cricklewood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/colindale/",
+      "destination": "/seo/colindale/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/colindale",
+      "destination": "/seo/colindale/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/edgware/",
+      "destination": "/seo/edgware/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/edgware",
+      "destination": "/seo/edgware/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/burnt-oak/",
+      "destination": "/seo/burnt-oak/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/burnt-oak",
+      "destination": "/seo/burnt-oak/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/queensbury/",
+      "destination": "/seo/queensbury/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/queensbury",
+      "destination": "/seo/queensbury/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/hendon/",
+      "destination": "/seo/hendon/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/hendon",
+      "destination": "/seo/hendon/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/golders-green/",
+      "destination": "/seo/golders-green/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/golders-green",
+      "destination": "/seo/golders-green/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/west-hampstead/",
+      "destination": "/seo/west-hampstead/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/west-hampstead",
+      "destination": "/seo/west-hampstead/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/maida-vale/",
+      "destination": "/seo/maida-vale/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/maida-vale",
+      "destination": "/seo/maida-vale/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/st-johns-wood/",
+      "destination": "/seo/st-johns-wood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/st-johns-wood",
+      "destination": "/seo/st-johns-wood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/stanmore/",
+      "destination": "/seo/stanmore/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/stanmore",
+      "destination": "/seo/stanmore/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/pinner/",
+      "destination": "/seo/pinner/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/pinner",
+      "destination": "/seo/pinner/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/northwood/",
+      "destination": "/seo/northwood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/northwood",
+      "destination": "/seo/northwood/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/ruislip/",
+      "destination": "/seo/ruislip/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/ruislip",
+      "destination": "/seo/ruislip/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/greenford/",
+      "destination": "/seo/greenford/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/greenford",
+      "destination": "/seo/greenford/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/northolt/",
+      "destination": "/seo/northolt/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/northolt",
+      "destination": "/seo/northolt/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/watford/",
+      "destination": "/seo/watford/",
+      "permanent": true
+    },
+    {
+      "source": "/localseoagency/watford",
+      "destination": "/seo/watford/",
+      "permanent": true
+    }
+  ]
+}
+Total redirects: 73
