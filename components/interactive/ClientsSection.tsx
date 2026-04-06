@@ -10,18 +10,7 @@ export default function ClientsSection({ clients }: { clients: Client[] }) {
       className="flex items-center px-6 md:px-10 py-5 flex-wrap gap-y-3"
       style={{ background: '#ffffff', borderBottom: '3px solid #111110' }}
     >
-      {/* Label — Barlow Condensed 700 */}
-      <span
-        className="v1-label text-xs shrink-0 pr-10 mr-10 whitespace-nowrap"
-        style={{
-          color: '#888888',
-          letterSpacing: '0.25em',
-          borderRight: '2px solid #111110',
-        }}
-      >
-        Trusted by
-      </span>
-
+      {/* Client names */}
       <div className="flex flex-wrap gap-x-10 gap-y-2 items-center">
         {clients.map((client, i) => (
           <motion.span
